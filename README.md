@@ -66,7 +66,7 @@ Il software lavora su file in formato JSONL e produce un file di output con il t
 
 ## Installazione
 
-### 1 — Scarica il pacchetto
+### 1 — Scarica il pacchetto dalla sezione Releases
 
 Vai alla sezione [**Releases**](../../releases) di questo repository e scarica:
 - `purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz` — il software (65 MB)
@@ -78,13 +78,31 @@ sha256sum -c purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256
 # Deve rispondere: purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz: OK
 ```
 
-### 2 — Estrai e installa la licenza
+### 2 — Estrai il pacchetto e genera il tuo fingerprint hardware
 
 ```bash
 # Estrai il pacchetto
 tar xzf purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz
 cd purifyfactory-v9.1.6-beta.1-linux-x64
 
+# Genera il fingerprint hardware della tua macchina
+./purifyfactory hardware-id
+```
+
+Vedrai un output simile a:
+```
+  HARDWARE FINGERPRINT:
+  5a1d49815666cc3a82910ae4a42e8214fc7798d4d9d549cbf95f2de3c682ee35
+
+  Send this fingerprint to Mentora Technologies
+  to receive your license file.
+```
+
+**Invia questo fingerprint a support@mentoratechnologies.com** — riceverai la tua licenza personale entro 24 ore.
+
+### 3 — Installa la licenza ricevuta
+
+```bash
 # Installa la licenza ricevuta via email
 mkdir -p ~/.config/purifyfactory
 cp /percorso/del/license.json ~/.config/purifyfactory/license.json
@@ -94,7 +112,7 @@ cp /percorso/del/license.json ~/.config/purifyfactory/license.json
 # Risposta attesa: ✅ License VALID — tier=beta
 ```
 
-### 3 — Configura la tua API key
+### 4 — Configura la tua API key
 
 Copia il file di configurazione di esempio e inserisci la tua API key:
 
