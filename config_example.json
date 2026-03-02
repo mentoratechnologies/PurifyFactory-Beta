@@ -1,0 +1,50 @@
+{
+  "version": "9.1.6",
+  "tier": "pro",
+
+  "paths": {
+    "input_file": null,
+    "output_dir": null
+  },
+
+  "processing": {
+    "split_size": 5000,
+    "batch_size": 50,
+    "max_parallel_workers": 4,
+    "worker_timeout_seconds": 300,
+    "recheck_interval_seconds": 30
+  },
+
+  "ai": {
+    "provider": "anthropic",
+    "fallback_provider": null,
+    "model": "claude-sonnet-4-5-20250929",
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "max_retries": 5,
+    "retry_delay_base": 2.0,
+    "system_prompt": "Pulisci il seguente testo: correggi errori grammaticali, rimuovi spazi doppi, normalizza la punteggiatura. Restituisci SOLO il testo pulito, senza commenti o spiegazioni.",
+    "api_keys": {
+      "anthropic": "INSERISCI_LA_TUA_API_KEY_QUI"
+    }
+  },
+
+  "storage": {
+    "backend": "filesystem",
+    "use_file_locking": true
+  },
+
+  "logging": {
+    "level": "INFO",
+    "rotation": "10 MB",
+    "retention": "30 days",
+    "enable_json_logs": false
+  },
+
+  "license": {
+    "license_file": null,
+    "validation_url": null,
+    "allow_offline_mode": true,
+    "offline_grace_period_days": 7
+  }
+}
