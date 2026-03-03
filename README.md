@@ -1,8 +1,15 @@
-# PurifyFactory v9.1.6 — Programma Beta
+# PurifyFactory v9.1.6 — Beta Program
 
-**Pipeline industriale di pulizia testo tramite AI** — Mentora Technologies
+**Industrial AI-powered text cleaning pipeline** — Mentora Technologies
 
 ---
+
+🇮🇹 [Italiano](#italiano) · 🇬🇧 [English](#english)
+
+---
+
+<a name="italiano"></a>
+# 🇮🇹 Italiano
 
 ## Benvenuto nel programma beta
 
@@ -81,15 +88,12 @@ sha256sum -c purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256
 ### 2 — Estrai il pacchetto e genera il tuo fingerprint hardware
 
 ```bash
-# Estrai il pacchetto
 tar xzf purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz
 cd purifyfactory-v9.1.6-beta.1-linux-x64
-
-# Genera il fingerprint hardware della tua macchina
 ./purifyfactory hardware-id
 ```
 
-Vedrai un output simile a:
+Output atteso:
 ```
   HARDWARE FINGERPRINT:
   5a1d49815666cc3a82910ae4a42e8214fc7798d4d9d549cbf95f2de3c682ee35
@@ -103,24 +107,19 @@ Vedrai un output simile a:
 ### 3 — Installa la licenza ricevuta
 
 ```bash
-# Installa la licenza ricevuta via email
 mkdir -p ~/.config/purifyfactory
 cp /percorso/del/license.json ~/.config/purifyfactory/license.json
-
-# Verifica che tutto funzioni
 ./purifyfactory validate
 # Risposta attesa: ✅ License VALID — tier=beta
 ```
 
 ### 4 — Configura la tua API key
 
-Copia il file di configurazione di esempio e inserisci la tua API key:
-
 ```bash
 cp beta/examples/config_quickstart.json mio_config.json
 ```
 
-Apri `mio_config.json` con un editor di testo e sostituisci `INSERISCI_LA_TUA_OPENAI_API_KEY_QUI` con la tua chiave reale. Se usi un provider diverso da OpenAI, modifica anche `"provider"` e `"model"`:
+Apri `mio_config.json` e inserisci la tua API key:
 
 ```json
 "ai": {
@@ -131,8 +130,6 @@ Apri `mio_config.json` con un editor di testo e sostituisci `INSERISCI_LA_TUA_OP
   }
 }
 ```
-
-Provider e modelli supportati:
 
 | Provider | Valore `provider` | Modelli consigliati |
 |---|---|---|
@@ -145,86 +142,49 @@ Provider e modelli supportati:
 
 ## Elaborare un dataset
 
-La pipeline si esegue in tre passi sequenziali. Il tuo dataset deve essere un file **JSONL** (una riga JSON per record) con un campo di testo da pulire.
-
-### Struttura del file di input
-
-```jsonl
-{"id": "001", "testo": "Il prodotto  è ottimo ottimo davvero."}
-{"id": "002", "testo": "Spedizione  veloce  e imballaggio  ok ."}
-```
-
-Il campo che contiene il testo da pulire va specificato nel prompt di sistema del config. Il nome del campo non importa — PurifyFactory legge l'intero record e lo passa al modello AI.
-
-### Step 1 — Split: suddividi il dataset in blocchi
+Il dataset deve essere un file **JSONL** (una riga JSON per record).
 
 ```bash
-./purifyfactory split \
-  --input /percorso/del/tuo/dataset.jsonl \
-  --config mio_config.json
-```
+# Step 1 — Suddividi il dataset in blocchi
+./purifyfactory split --input /percorso/dataset.jsonl --config mio_config.json
 
-Il software suddivide automaticamente il file in blocchi da 100 record (configurabile). Per dataset piccoli (<100 record) crea un unico blocco.
-
-### Step 2 — Orchestrate: organizza i batch di lavoro
-
-```bash
+# Step 2 — Organizza i batch di lavoro
 ./purifyfactory orchestrate --config mio_config.json
-```
 
-Ogni blocco viene ulteriormente suddiviso in batch da 10 record (configurabile), pronti per l'elaborazione parallela.
-
-### Step 3 — Process: elabora con l'AI
-
-```bash
+# Step 3 — Elabora con l'AI
 ./purifyfactory process --config mio_config.json
 ```
 
-I batch vengono elaborati in parallelo (1 worker in configurazione beta di default). Il progresso è visibile in tempo reale con `./purifyfactory watch` in un secondo terminale.
-
-Al termine, il risultato si trova in:
-```
-~/.config/purifyfactory/data/output/final_output.jsonl
-```
-
-Ogni riga contiene:
+Il risultato si trova in `~/.config/purifyfactory/data/output/final_output.jsonl`:
 ```json
-{"original_text": "Il prodotto  è ottimo ottimo.", "cleaned_text": "Il prodotto è ottimo.", "provider": "openai", "tokens": 45, "cost": 0.000010}
+{"original_text": "testo originale...", "cleaned_text": "testo pulito...", "provider": "openai", "tokens": 45, "cost": 0.000010}
 ```
 
 ---
 
 ## Monitoraggio
 
-Questi comandi puoi eseguirli in qualsiasi momento, anche durante un'elaborazione in corso, in un secondo terminale.
-
 | Comando | Cosa mostra |
 |---|---|
-| `./purifyfactory status` | Riepilogo: split totali, batch in coda, completati, errori |
+| `./purifyfactory status` | Riepilogo: batch in coda, completati, errori |
 | `./purifyfactory watch` | Aggiornamento automatico ogni 3 secondi (Ctrl+C per uscire) |
-| `./purifyfactory queue` | Lista dettagliata dei batch ancora in coda |
-| `./purifyfactory errors` | Lista dei batch falliti con il motivo dell'errore |
-| `./purifyfactory report` | Report completo: record elaborati, token usati, costo totale, distribuzione provider |
-| `./purifyfactory statistics` | Statistiche aggregate: costo medio per record, utilizzo disco |
+| `./purifyfactory queue` | Lista dei batch ancora in coda |
+| `./purifyfactory errors` | Batch falliti con il motivo dell'errore |
+| `./purifyfactory report` | Record elaborati, token usati, costo totale |
+| `./purifyfactory statistics` | Costo medio per record, utilizzo disco |
 
 ---
 
 ## Se qualcosa va storto
 
-### Batch falliti
-
-Se alcuni batch falliscono (API temporaneamente non disponibile, timeout, ecc.), puoi rimetterli in coda e riprovare:
-
+**Batch falliti:**
 ```bash
-./purifyfactory errors          # vedi quali batch hanno fallito e perché
-./purifyfactory recover         # rimetti in coda i batch falliti
-./purifyfactory process --config mio_config.json   # riprova
+./purifyfactory errors
+./purifyfactory recover
+./purifyfactory process --config mio_config.json
 ```
 
-### ⚠️ Ricominciare da zero con un nuovo dataset
-
-Se vuoi elaborare un **dataset diverso** dopo un test precedente, devi pulire lo stato manualmente prima di eseguire `split`:
-
+**⚠️ Ricominciare da zero con un nuovo dataset** — pulisci lo stato prima di `split`:
 ```bash
 rm -rf ~/.config/purifyfactory/data/state/queue/*
 rm -rf ~/.config/purifyfactory/data/state/errors/*
@@ -233,36 +193,27 @@ rm -rf ~/.config/purifyfactory/data/splits/*
 rm -f  ~/.config/purifyfactory/data/output/final_output.jsonl
 ```
 
-Poi esegui normalmente `split → orchestrate → process` con il nuovo dataset.
+> Non necessario se il job precedente si è completato con successo.
 
-> Questo passaggio non è necessario se la tua elaborazione precedente si è **completata con successo**: in quel caso la pipeline assegna automaticamente un nuovo ID alla sessione.
+**Problemi comuni:**
 
-### Problemi comuni
+| Sintomo | Soluzione |
+|---|---|
+| `License validation failed` | Verifica `~/.config/purifyfactory/license.json` |
+| `Provider authentication failed` | Controlla la API key e il saldo sul portale del provider |
+| Batch bloccati in errore | Esegui `recover` poi `process` |
 
-| Sintomo | Causa probabile | Soluzione |
-|---|---|---|
-| `License validation failed` | Licenza non trovata o scaduta | Verifica `~/.config/purifyfactory/license.json` |
-| `Provider authentication failed` | API key errata o crediti esauriti | Controlla la chiave e il saldo sul portale del provider |
-| `Batch bloccati in errore` | Errore temporaneo API | Esegui `recover` poi `process` |
-| Nessun output dopo process | Tutti i batch in errore | Esegui `errors` per vedere il motivo |
-
-### Esportare i log per il supporto
-
-Se riscontri un problema che non riesci a risolvere, esporta i log anonimizzati:
-
+**Log per il supporto:**
 ```bash
 ./purifyfactory export-debug --output debug_report.zip
+# Invia il file a support@mentoratechnologies.com
 ```
-
-Il file non contiene API key, percorsi utente o dati personali. Invialo a **support@mentoratechnologies.com** con una breve descrizione del problema.
 
 ---
 
 ## Dimensione del dataset per la certificazione
 
-Il dataset di esempio incluso nel pacchetto (50 record) serve solo per imparare ad usare lo strumento. Per contribuire alla certificazione TRL5 usa i tuoi dati reali:
-
-| Dimensione | Valido per certificazione? |
+| Dimensione | Valido per certificazione TRL5? |
 |---|---|
 | < 100 record | ❌ Solo per apprendimento |
 | 100 – 999 record | ⚠️ Insufficiente |
@@ -274,12 +225,228 @@ Il dataset di esempio incluso nel pacchetto (50 record) serve solo per imparare 
 
 ## Feedback
 
-Il tuo feedback è la ragione per cui esiste questo programma beta. Compila il template in `beta/FEEDBACK_TEMPLATE.md` e invialo a **feedback@mentoratechnologies.com** oppure aprendo una Issue in questo repository.
+Compila `FEEDBACK_TEMPLATE.md` e invialo a **feedback@mentoratechnologies.com** oppure apri una Issue in questo repository.
 
-Siamo interessati a sapere:
-- Cosa ha funzionato bene e cosa no
-- Casi d'uso che lo strumento non copre o copre male
-- Qualsiasi comportamento inaspettato, anche se non è un errore vero e proprio
+---
+
+<a name="english"></a>
+# 🇬🇧 English
+
+## Welcome to the Beta Program
+
+You have been selected as a beta tester for PurifyFactory v9.1.6. This repository contains everything you need to install the software, run tests, and send us feedback.
+
+Your contribution is essential: your real-world datasets and observations allow us to certify the software for production use (TRL5) and improve it before commercial release. Thank you.
+
+---
+
+## ⚠️ Important: API key required — at your own expense
+
+> **PurifyFactory uses external AI APIs to process text.**
+> **These APIs are not included in the software and are not provided by Mentora Technologies.**
+>
+> Before using the software you must have an active API key with sufficient credits from one of the supported providers:
+>
+> | Provider | Where to get it | Indicative cost |
+> |---|---|---|
+> | **OpenAI** | platform.openai.com | ~$0.15–$0.60 per million tokens (gpt-4o-mini) |
+> | **Anthropic** | console.anthropic.com | ~$0.25–$1.00 per million tokens (claude-haiku) |
+> | **Google Gemini** | aistudio.google.com | ~$0.075–$0.30 per million tokens (gemini-flash) |
+> | **Local (Ollama/vLLM)** | — | Your own infrastructure cost |
+>
+> **All processing costs are entirely your responsibility.** For a 1,000-record test dataset, the typical cost with gpt-4o-mini is under $0.10.
+>
+> Monitor your usage directly on your API provider's dashboard.
+
+---
+
+## What is PurifyFactory
+
+PurifyFactory is an on-premise tool for **normalizing and cleaning large volumes of text** using AI language models. It automates operations that would otherwise take hours of manual work:
+
+- Removing multiple spaces, anomalous characters, malformed punctuation
+- Eliminating consecutive repeated words
+- Normalizing capitalization and apostrophes
+- Correcting systematic typographical errors
+- Any other cleaning operation that can be described in a system prompt
+
+The software works with JSONL files and produces an output file with the original and cleaned text side by side, field by field. It runs locally on your machine: your data never passes through Mentora Technologies servers.
+
+**Typical use cases:**
+- Normalizing datasets for ML model training
+- Cleaning data feeds from CRM, ERP, e-commerce systems
+- Preparing text for RAG pipelines or full-text search
+- Standardizing corporate text datasets before analysis
+
+---
+
+## Requirements
+
+- **Operating system**: Linux x86_64 (Ubuntu 20.04+, Debian 11+, any modern distro)
+- **`license.json` file**: received via email from Mentora Technologies — specific to your machine
+- **API key**: OpenAI, Anthropic, Google Gemini, or local model (Ollama/vLLM)
+- **Disk space**: ~200 MB for the software + space for your datasets
+- **RAM**: at least 2 GB available during processing
+
+> Windows and macOS are on the roadmap for future versions.
+
+---
+
+## Installation
+
+### 1 — Download the package from the Releases section
+
+Go to the [**Releases**](../../releases) section of this repository and download:
+- `purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz` — the software (65 MB)
+- `purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256` — verification checksum
+
+**Verify integrity before extracting** (recommended):
+```bash
+sha256sum -c purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256
+# Expected: purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz: OK
+```
+
+### 2 — Extract the package and generate your hardware fingerprint
+
+```bash
+tar xzf purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz
+cd purifyfactory-v9.1.6-beta.1-linux-x64
+./purifyfactory hardware-id
+```
+
+Expected output:
+```
+  HARDWARE FINGERPRINT:
+  5a1d49815666cc3a82910ae4a42e8214fc7798d4d9d549cbf95f2de3c682ee35
+
+  Send this fingerprint to Mentora Technologies
+  to receive your license file.
+```
+
+**Send this fingerprint to support@mentoratechnologies.com** — you will receive your personal license within 24 hours.
+
+### 3 — Install the received license
+
+```bash
+mkdir -p ~/.config/purifyfactory
+cp /path/to/license.json ~/.config/purifyfactory/license.json
+./purifyfactory validate
+# Expected: ✅ License VALID — tier=beta
+```
+
+### 4 — Configure your API key
+
+```bash
+cp beta/examples/config_quickstart.json my_config.json
+```
+
+Open `my_config.json` and insert your API key:
+
+```json
+"ai": {
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "api_keys": {
+    "openai": "sk-..."
+  }
+}
+```
+
+| Provider | `provider` value | Recommended models |
+|---|---|---|
+| OpenAI | `"openai"` | `"gpt-4o-mini"`, `"gpt-4o"` |
+| Anthropic | `"anthropic"` | `"claude-haiku-4-5-20251001"` |
+| Google Gemini | `"gemini"` | `"gemini-2.0-flash"` |
+| Local (Ollama) | `"local"` | Ollama model name (e.g. `"llama3.2"`) |
+
+---
+
+## Processing a dataset
+
+Your dataset must be a **JSONL** file (one JSON object per line).
+
+```bash
+# Step 1 — Split the dataset into chunks
+./purifyfactory split --input /path/to/dataset.jsonl --config my_config.json
+
+# Step 2 — Organize work batches
+./purifyfactory orchestrate --config my_config.json
+
+# Step 3 — Process with AI
+./purifyfactory process --config my_config.json
+```
+
+The result is saved to `~/.config/purifyfactory/data/output/final_output.jsonl`:
+```json
+{"original_text": "original text...", "cleaned_text": "cleaned text...", "provider": "openai", "tokens": 45, "cost": 0.000010}
+```
+
+---
+
+## Monitoring
+
+| Command | What it shows |
+|---|---|
+| `./purifyfactory status` | Summary: batches queued, completed, errors |
+| `./purifyfactory watch` | Auto-refresh every 3 seconds (Ctrl+C to exit) |
+| `./purifyfactory queue` | Detailed list of batches still in queue |
+| `./purifyfactory errors` | Failed batches with error reason |
+| `./purifyfactory report` | Records processed, tokens used, total cost |
+| `./purifyfactory statistics` | Average cost per record, disk usage |
+
+---
+
+## Troubleshooting
+
+**Failed batches:**
+```bash
+./purifyfactory errors
+./purifyfactory recover
+./purifyfactory process --config my_config.json
+```
+
+**⚠️ Starting fresh with a new dataset** — clean the state before `split`:
+```bash
+rm -rf ~/.config/purifyfactory/data/state/queue/*
+rm -rf ~/.config/purifyfactory/data/state/errors/*
+rm -rf ~/.config/purifyfactory/data/state/progress/*
+rm -rf ~/.config/purifyfactory/data/splits/*
+rm -f  ~/.config/purifyfactory/data/output/final_output.jsonl
+```
+
+> Not needed if the previous job completed successfully.
+
+**Common issues:**
+
+| Symptom | Solution |
+|---|---|
+| `License validation failed` | Check `~/.config/purifyfactory/license.json` |
+| `Provider authentication failed` | Check your API key and credit balance on the provider portal |
+| Batches stuck in errors | Run `recover` then `process` |
+
+**Logs for support:**
+```bash
+./purifyfactory export-debug --output debug_report.zip
+# Send the file to support@mentoratechnologies.com
+```
+
+---
+
+## Dataset size for certification
+
+| Size | Valid for TRL5 certification? |
+|---|---|
+| < 100 records | ❌ Learning only |
+| 100 – 999 records | ⚠️ Insufficient |
+| 1,000 – 4,999 records | ✅ Minimum accepted |
+| ≥ 5,000 records | ✅ Recommended |
+| ≥ 10,000 records | ✅ Optimal |
+
+---
+
+## Feedback
+
+Fill in `FEEDBACK_TEMPLATE.md` and send it to **feedback@mentoratechnologies.com** or open an Issue in this repository.
 
 ---
 
