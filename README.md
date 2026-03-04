@@ -1,6 +1,6 @@
 # PurifyFactory v9.1.6 — Beta Program
 
-**Industrial AI-powered text cleaning pipeline** — Mentora Technologies
+**Il tuo dataset. Ultra Pulito. Pronto per addestrare AI.** — Mentora Technologies
 
 ---
 
@@ -39,23 +39,47 @@ Il tuo contributo è essenziale: i tuoi dataset reali e le tue osservazioni ci p
 
 ---
 
-## Cos'è PurifyFactory
+## Cos'è PurifyFactory — e perché è fondamentale per l'AI
 
-PurifyFactory è uno strumento on-premise per la **normalizzazione e pulizia di grandi volumi di testo** tramite modelli di linguaggio AI. È progettato per automatizzare operazioni che richiederebbero ore di lavoro manuale:
+### Il problema: i dati sporchi distruggono i modelli AI
 
-- Rimozione di spazi multipli, caratteri anomali, punteggiatura malformata
-- Eliminazione di parole ripetute in sequenza
-- Normalizzazione di maiuscole/minuscole e apostrofi
-- Correzione di errori tipografici sistematici
-- Qualsiasi altra operazione di pulizia descrivibile in un prompt di sistema
+Ogni modello di linguaggio AI — che si tratti di un LLM, un sistema RAG, un classificatore o un motore di ricerca semantica — è esattamente buono quanto i dati su cui è stato addestrato. È il principio fondamentale del settore: **garbage in, garbage out**.
 
-Il software lavora su file in formato JSONL e produce un file di output con il testo originale e il testo pulito affiancati, campo per campo. Funziona in locale sul tuo computer: i dati non transitano su server di Mentora Technologies.
+Il problema è che i dati reali sono quasi sempre sporchi. Testi estratti da CRM, ERP, siti web, documenti scansionati, feed automatici: contengono errori sistematici che sembrano innocui ma che, moltiplicati per milioni di record, degradano in modo misurabile le prestazioni del modello addestrato.
 
-**Casi d'uso tipici:**
-- Normalizzazione di dataset per l'addestramento di modelli ML
-- Pulizia di feed di dati da CRM, ERP, e-commerce
-- Preparazione di testi per pipeline RAG o full-text search
-- Standardizzazione di dataset di testo aziendale prima dell'analisi
+Spazi doppi, punteggiatura malformata, parole ripetute, apostrofi sbagliati, maiuscole inconsistenti, artefatti di encoding — ciascuno di questi errori introduce rumore nel dataset. Il modello impara il rumore insieme al segnale. Il risultato è un modello meno preciso, meno coerente, più difficile da controllare.
+
+La pulizia manuale non è una soluzione: è impossibile da garantire su migliaia o milioni di record, è costosa, è lenta, ed è soggetta a sua volta a errori umani.
+
+### La soluzione: dataset Ultra Puliti
+
+**PurifyFactory è uno strumento on-premise che trasforma qualsiasi dataset testuale in un dataset Ultra Pulito** — ovvero privo di qualsiasi errore di forma, encoding, formattazione e coerenza — indipendentemente dalla dimensione del dataset.
+
+Un dataset Ultra Pulito non significa solo "testo più leggibile". Significa:
+
+- **Zero errori di formattazione**: nessuno spazio doppio, nessuna punteggiatura malformata, nessun carattere anomalo
+- **Zero ripetizioni**: nessuna parola o frase ripetuta in sequenza
+- **Coerenza totale**: maiuscole/minuscole, apostrofi e punteggiatura normalizzati secondo regole uniformi in ogni record
+- **Zero artefatti**: niente residui di markup, encoding errati, tag HTML, caratteri di controllo
+- **Qualità uniforme**: ogni singolo record del dataset rispetta lo stesso standard, dal primo all'ultimo
+
+Questo standard di qualità è definito da te tramite il **prompt di sistema** — descrivi in linguaggio naturale le regole di pulizia che vuoi applicare, e PurifyFactory le applica in modo coerente e verificabile su ogni record del dataset.
+
+### Perché questo cambia tutto per l'addestramento AI
+
+Il mercato dell'AI è oggi il mercato tecnologico a più alta crescita al mondo. Migliaia di aziende stanno costruendo modelli proprietari, fine-tuning di LLM, sistemi RAG su dati aziendali. Tutte queste applicazioni dipendono da un fattore critico che viene spesso sottovalutato: **la qualità del dato di addestramento**.
+
+La ricerca empirica è inequivocabile: un modello addestrato su dati puliti con metà dei record supera sistematicamente un modello addestrato su dati sporchi con il doppio dei record. La qualità batte la quantità.
+
+PurifyFactory automatizza questa fase critica del pipeline ML:
+
+- **Scalabile**: funziona su dataset di qualsiasi dimensione, da centinaia a milioni di record, con la stessa qualità garantita
+- **Riproducibile**: lo stesso prompt produce gli stessi risultati su qualsiasi dataset — niente variabilità umana
+- **Verificabile**: ogni record di output affianca il testo originale e il testo pulito, permettendo audit completi
+- **On-premise**: i dati non lasciano mai la tua infrastruttura — fondamentale per dataset aziendali sensibili
+- **Provider-agnostic**: funziona con OpenAI, Anthropic, Google Gemini o modelli locali (Ollama/vLLM)
+
+**Ogni ora investita in PurifyFactory prima dell'addestramento vale decine di ore risparmiate in post-training, fine-tuning correttivo e gestione degli errori del modello.**
 
 ---
 
@@ -260,23 +284,47 @@ Your contribution is essential: your real-world datasets and observations allow 
 
 ---
 
-## What is PurifyFactory
+## What is PurifyFactory — and why it matters for AI
 
-PurifyFactory is an on-premise tool for **normalizing and cleaning large volumes of text** using AI language models. It automates operations that would otherwise take hours of manual work:
+### The problem: dirty data destroys AI models
 
-- Removing multiple spaces, anomalous characters, malformed punctuation
-- Eliminating consecutive repeated words
-- Normalizing capitalization and apostrophes
-- Correcting systematic typographical errors
-- Any other cleaning operation that can be described in a system prompt
+Every AI language model — whether an LLM, a RAG system, a classifier, or a semantic search engine — is exactly as good as the data it was trained on. This is the field's foundational principle: **garbage in, garbage out**.
 
-The software works with JSONL files and produces an output file with the original and cleaned text side by side, field by field. It runs locally on your machine: your data never passes through Mentora Technologies servers.
+The problem is that real-world data is almost always dirty. Text extracted from CRMs, ERPs, websites, scanned documents, automated feeds: it contains systematic errors that seem harmless individually but, multiplied across millions of records, measurably degrade the performance of the trained model.
 
-**Typical use cases:**
-- Normalizing datasets for ML model training
-- Cleaning data feeds from CRM, ERP, e-commerce systems
-- Preparing text for RAG pipelines or full-text search
-- Standardizing corporate text datasets before analysis
+Double spaces, malformed punctuation, repeated words, misplaced apostrophes, inconsistent capitalization, encoding artifacts — each of these errors introduces noise into the dataset. The model learns the noise alongside the signal. The result is a less accurate, less consistent, harder-to-control model.
+
+Manual cleaning is not a solution: it cannot be guaranteed at scale across thousands or millions of records, it is expensive, slow, and itself prone to human error.
+
+### The solution: Ultra Clean datasets
+
+**PurifyFactory is an on-premise tool that transforms any text dataset into an Ultra Clean dataset** — free from any error of form, encoding, formatting, or consistency — regardless of dataset size.
+
+An Ultra Clean dataset does not simply mean "more readable text." It means:
+
+- **Zero formatting errors**: no double spaces, no malformed punctuation, no anomalous characters
+- **Zero repetitions**: no word or phrase repeated in sequence
+- **Total consistency**: capitalization, apostrophes, and punctuation normalized according to uniform rules across every record
+- **Zero artifacts**: no markup residues, encoding errors, HTML tags, or control characters
+- **Uniform quality**: every single record in the dataset meets the same standard, from first to last
+
+This quality standard is defined by you through the **system prompt** — describe the cleaning rules you want to apply in natural language, and PurifyFactory applies them consistently and verifiably to every record in the dataset.
+
+### Why this changes everything for AI training
+
+The AI market is today the fastest-growing technology market in the world. Thousands of companies are building proprietary models, fine-tuning LLMs, and developing RAG systems on enterprise data. All of these applications depend on a critical factor that is frequently underestimated: **the quality of the training data**.
+
+Empirical research is unambiguous: a model trained on clean data with half the records consistently outperforms a model trained on dirty data with twice the records. Quality beats quantity.
+
+PurifyFactory automates this critical phase of the ML pipeline:
+
+- **Scalable**: works on datasets of any size, from hundreds to millions of records, with the same guaranteed quality
+- **Reproducible**: the same prompt produces the same results on any dataset — no human variability
+- **Auditable**: every output record pairs the original text with the cleaned text, enabling complete audits
+- **On-premise**: data never leaves your infrastructure — essential for sensitive enterprise datasets
+- **Provider-agnostic**: works with OpenAI, Anthropic, Google Gemini, or local models (Ollama/vLLM)
+
+**Every hour invested in PurifyFactory before training is worth tens of hours saved in post-training, corrective fine-tuning, and model error management.**
 
 ---
 
