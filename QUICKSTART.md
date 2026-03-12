@@ -69,6 +69,35 @@ Dovresti vedere: `✅ License validation: SUCCESS — tier=beta`
 
 ---
 
+## Formato del dataset
+
+PurifyFactory legge file **JSONL** (JSON Lines): un oggetto JSON per riga, codifica UTF-8.
+
+**Campo testo**: ogni record deve contenere un campo chiamato `"sentence"` oppure `"text"`. Il sistema cerca prima `"sentence"`, poi `"text"` come fallback. Se nessuno dei due è presente, il record viene saltato (con un warning nel log).
+
+```jsonl
+{"sentence": "Testo da pulire.", "id": 1}
+{"text": "Altro record.", "id": 2}
+```
+
+Gli altri campi del record (es. `"id"`, `"source"`) vengono ignorati durante il processing e **non vengono copiati nell'output**.
+
+**Se il tuo dataset usa un campo con nome diverso** (es. `"content"`, `"body"`, `"description"`), rinominalo prima di avviare la pipeline:
+
+```python
+import json
+
+with open("input.jsonl") as fin, open("prepared.jsonl", "w") as fout:
+    for line in fin:
+        record = json.loads(line)
+        record["sentence"] = record.pop("content")  # adatta al tuo campo
+        fout.write(json.dumps(record, ensure_ascii=False) + "\n")
+```
+
+Il dataset di esempio incluso (`beta/examples/sample_dataset.jsonl`) usa già il campo `"sentence"` e funziona senza modifiche.
+
+---
+
 ## Parte 2 — Primo run con il dataset di esempio (10 minuti)
 
 ### 1. Configura la tua API key
