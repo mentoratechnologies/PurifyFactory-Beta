@@ -166,7 +166,25 @@ Apri `mio_config.json` e inserisci la tua API key:
 
 ## Elaborare un dataset
 
-Il dataset deve essere un file **JSONL** (una riga JSON per record).
+Il dataset deve essere un file **JSONL** (una riga JSON per record, codifica UTF-8).
+
+**Campo testo obbligatorio**: ogni record deve contenere un campo `"sentence"` (cercato per primo) oppure `"text"` (fallback). I record privi di entrambi vengono saltati con un warning nel log. Gli altri campi del record vengono ignorati e non trasferiti nell'output.
+
+```jsonl
+{"sentence": "Testo da pulire.", "id": 1}
+{"text": "Altro record.", "id": 2}
+```
+
+**Se il tuo dataset usa un campo con nome diverso** (es. `"content"`, `"body"`, `"description"`), rinominalo prima di avviare la pipeline:
+
+```python
+import json
+with open("input.jsonl") as fin, open("prepared.jsonl", "w") as fout:
+    for line in fin:
+        record = json.loads(line)
+        record["sentence"] = record.pop("content")  # adatta al tuo campo
+        fout.write(json.dumps(record, ensure_ascii=False) + "\n")
+```
 
 ```bash
 # Step 1 — Suddividi il dataset in blocchi
@@ -411,7 +429,25 @@ Open `my_config.json` and insert your API key:
 
 ## Processing a dataset
 
-Your dataset must be a **JSONL** file (one JSON object per line).
+Your dataset must be a **JSONL** file (one JSON object per line, UTF-8 encoding).
+
+**Required text field**: each record must contain a `"sentence"` field (checked first) or a `"text"` field (fallback). Records with neither field are skipped with a warning in the log. Other fields in the record are ignored and not included in the output.
+
+```jsonl
+{"sentence": "Text to clean.", "id": 1}
+{"text": "Another record.", "id": 2}
+```
+
+**If your dataset uses a different field name** (e.g. `"content"`, `"body"`, `"description"`), rename it before running the pipeline:
+
+```python
+import json
+with open("input.jsonl") as fin, open("prepared.jsonl", "w") as fout:
+    for line in fin:
+        record = json.loads(line)
+        record["sentence"] = record.pop("content")  # adapt to your field name
+        fout.write(json.dumps(record, ensure_ascii=False) + "\n")
+```
 
 ```bash
 # Step 1 — Split the dataset into chunks
