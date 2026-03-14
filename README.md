@@ -11,6 +11,11 @@
 <a name="italiano"></a>
 # 🇮🇹 Italiano
 
+> **⚠️ Questo non è un progetto open source.**
+> Il codice sorgente non è disponibile. Questo repository è il punto di accesso al **programma beta** di PurifyFactory: puoi scaricare il binario compilato, testarlo con i tuoi dati e inviarci feedback.
+> Per partecipare alla beta è necessaria una **licenza personale** (gratuita durante la fase beta) da richiedere a [waitlist@purifyfactory.com](mailto:waitlist@purifyfactory.com).
+
+
 ## Benvenuto nel programma beta
 
 Sei stato selezionato come betatester di PurifyFactory v9.1.6. Questo repository contiene tutto il necessario per installare il software, eseguire i test e inviarci il feedback.
@@ -275,6 +280,10 @@ Compila `FEEDBACK_TEMPLATE.md` e invialo a **feedback@mentoratechnologies.com** 
 # 🇬🇧 English
 
 ## Welcome to the Beta Program
+
+> **⚠️ This is not an open source project.**
+> The source code is not available. This repository is the access point to the **PurifyFactory beta program**: you can download the compiled binary, test it on your data, and send us feedback.
+> To participate in the beta, you need a **personal license** (free during the beta phase) — request one at [waitlist@purifyfactory.com](mailto:waitlist@purifyfactory.com).
 
 You have been selected as a beta tester for PurifyFactory v9.1.6. This repository contains everything you need to install the software, run tests, and send us feedback.
 
