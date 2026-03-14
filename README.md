@@ -100,20 +100,20 @@ PurifyFactory automatizza questa fase critica del pipeline ML:
 ### 1 — Scarica il pacchetto dalla sezione Releases
 
 Vai alla sezione [**Releases**](../../releases) di questo repository e scarica:
-- `purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz` — il software (65 MB)
-- `purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256` — checksum di verifica
+- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz` — il software (65 MB)
+- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256` — checksum di verifica
 
 **Verifica l'integrità prima di estrarre** (consigliato):
 ```bash
-sha256sum -c purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256
-# Deve rispondere: purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz: OK
+sha256sum -c purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256
+# Deve rispondere: purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz: OK
 ```
 
 ### 2 — Estrai il pacchetto e genera il tuo fingerprint hardware
 
 ```bash
-tar xzf purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz
-cd purifyfactory-v9.1.6-beta.1-linux-x64
+tar xzf purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz
+cd purifyfactory-v9.1.6-beta.2-linux-x64
 ./purifyfactory hardware-id
 ```
 
@@ -363,20 +363,20 @@ PurifyFactory automates this critical phase of the ML pipeline:
 ### 1 — Download the package from the Releases section
 
 Go to the [**Releases**](../../releases) section of this repository and download:
-- `purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz` — the software (65 MB)
-- `purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256` — verification checksum
+- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz` — the software (65 MB)
+- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256` — verification checksum
 
 **Verify integrity before extracting** (recommended):
 ```bash
-sha256sum -c purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz.sha256
-# Expected: purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz: OK
+sha256sum -c purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256
+# Expected: purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz: OK
 ```
 
 ### 2 — Extract the package and generate your hardware fingerprint
 
 ```bash
-tar xzf purifyfactory-v9.1.6-beta.1-linux-x64.tar.gz
-cd purifyfactory-v9.1.6-beta.1-linux-x64
+tar xzf purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz
+cd purifyfactory-v9.1.6-beta.2-linux-x64
 ./purifyfactory hardware-id
 ```
 
