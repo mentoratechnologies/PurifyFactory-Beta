@@ -131,7 +131,7 @@ Output atteso:
   to receive your license file.
 ```
 
-**Invia questo fingerprint a support@mentoratechnologies.com** — riceverai la tua licenza personale entro 24 ore.
+**Invia questo fingerprint a [betatesting@purifyfactory.com](mailto:betatesting@purifyfactory.com)** — riceverai la tua licenza personale entro 24 ore.
 
 ### 3 — Installa la licenza ricevuta
 
@@ -253,7 +253,7 @@ rm -f  ~/.config/purifyfactory/data/output/final_output.jsonl
 **Log per il supporto:**
 ```bash
 ./purifyfactory export-debug --output debug_report.zip
-# Invia il file a support@mentoratechnologies.com
+# Invia il file a betatesting@purifyfactory.com
 ```
 
 ---
@@ -272,7 +272,7 @@ rm -f  ~/.config/purifyfactory/data/output/final_output.jsonl
 
 ## Feedback
 
-Compila `FEEDBACK_TEMPLATE.md` e invialo a **feedback@mentoratechnologies.com** oppure apri una Issue in questo repository.
+Compila `FEEDBACK_TEMPLATE.md` e invialo a **[betatesting@purifyfactory.com](mailto:betatesting@purifyfactory.com)** oppure apri una Issue in questo repository.
 
 ---
 
@@ -398,7 +398,7 @@ Expected output:
   to receive your license file.
 ```
 
-**Send this fingerprint to support@mentoratechnologies.com** — you will receive your personal license within 24 hours.
+**Send this fingerprint to [betatesting@purifyfactory.com](mailto:betatesting@purifyfactory.com)** — you will receive your personal license within 24 hours.
 
 ### 3 — Install the received license
 
@@ -520,7 +520,7 @@ rm -f  ~/.config/purifyfactory/data/output/final_output.jsonl
 **Logs for support:**
 ```bash
 ./purifyfactory export-debug --output debug_report.zip
-# Send the file to support@mentoratechnologies.com
+# Send the file to betatesting@purifyfactory.com
 ```
 
 ---
@@ -539,8 +539,8 @@ rm -f  ~/.config/purifyfactory/data/output/final_output.jsonl
 
 ## Feedback
 
-Fill in `FEEDBACK_TEMPLATE.md` and send it to **feedback@mentoratechnologies.com** or open an Issue in this repository.
+Fill in `FEEDBACK_TEMPLATE.md` and send it to **[betatesting@purifyfactory.com](mailto:betatesting@purifyfactory.com)** or open an Issue in this repository.
 
 ---
 
-**Mentora Technologies** · support@mentoratechnologies.com · [mentoratechnologies.com](https://mentoratechnologies.com)
+**Mentora Technologies** · [betatesting@purifyfactory.com](mailto:betatesting@purifyfactory.com) · [mentoratechnologies.com](https://mentoratechnologies.com)
