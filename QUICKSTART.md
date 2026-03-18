@@ -7,7 +7,8 @@ Benvenuto nel programma beta di PurifyFactory. Questa guida ti porta dall'instal
 ## Prima di iniziare
 
 Verifica di avere:
-- **Python 3.10 o superiore** — controlla con `python3 --version`
+- **Sistema operativo**: Linux (il binario compilato è solo per Linux x64). Su Windows o macOS usa l'[Opzione B — Pacchetto Python](#opzione-b-pacchetto-python).
+- **Python 3.10 o superiore** — controlla con `python3 --version` (necessario solo per Opzione B)
 - **Una API key** di OpenAI oppure Anthropic
 - **Il file `license.json`** ricevuto via email da Mentora Technologies
 
@@ -15,12 +16,12 @@ Verifica di avere:
 
 ## Parte 1 — Installazione (5 minuti)
 
-### Opzione A: Binario compilato (consigliato)
+### Opzione A: Binario compilato (consigliato — solo Linux x64)
 
 ```bash
-# Estrai il pacchetto
-tar xzf purifyfactory-v9.1.6-linux-x64.tar.gz
-cd purifyfactory-v9.1.6
+# Estrai il pacchetto (sostituisci X.Y con il numero di versione del file scaricato)
+tar xzf purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz
+cd purifyfactory-v9.1.6-beta.3-linux-x64
 
 # Verifica che funzioni
 ./purifyfactory info
@@ -150,6 +151,13 @@ I comandi seguenti usano il dataset di esempio (50 frasi di testo italiano con d
 # Report dettagliato con costi
 ./purifyfactory report
 
+# Statistiche di utilizzo
+./purifyfactory statistics
+```
+
+> **Nota:** `report` e `statistics` non accettano `--config` e leggono sempre dallo stato condiviso in `~/.config/purifyfactory/`. Se hai eseguito più pipeline con config diverse, i comandi mostrano i dati **aggregati** di tutte le sessioni. Per confrontare run separati, annota i valori dopo ogni pipeline e pulisci lo stato prima di avviarne una nuova (vedi [⚠️ Ricominciare da zero](#️-ricominciare-da-zero-nuovo-dataset-o-nuovo-tentativo)).
+
+```bash
 # Visualizza il testo pulito (Linux)
 cat ~/.config/purifyfactory/data/output/final_output.jsonl
 # macOS: cat ~/Library/Application\ Support/PurifyFactory/data/output/final_output.jsonl
@@ -176,7 +184,12 @@ Durante un'elaborazione lunga puoi tenere aperto un secondo terminale e usare:
 Se alcuni batch falliscono, puoi rimandare in coda per un nuovo tentativo:
 
 ```bash
+# Con conferma interattiva (richiede terminale aperto)
 ./purifyfactory recover
+
+# Oppure senza conferma (utile in script o se il prompt non appare)
+./purifyfactory recover --force
+
 ./purifyfactory process --config beta/examples/config_quickstart.json
 ```
 
@@ -269,6 +282,7 @@ Per risultati ottimali, usa dati reali del tuo dominio applicativo (testi aziend
 ## Prossimi passi
 
 - Prova con i **tuoi dati**: sostituisci `sample_dataset.jsonl` con il tuo file JSONL — prima leggi la sezione [⚠️ Ricominciare da zero](#️-ricominciare-da-zero-nuovo-dataset-o-nuovo-tentativo) per pulire lo stato del test precedente
+- Esplora la **TUI interattiva**: `./purifyfactory tui --config config.json` — interfaccia a schermo intero per lanciare la pipeline e monitorare l'avanzamento senza usare la riga di comando (documentata in `docs/GUIDA_UTENTE.md`)
 - Adatta il **system prompt** nel config al tuo caso d'uso specifico
 - Usa un dataset di **almeno 1.000 record** (consigliati ≥ 5.000) per contribuire alla certificazione
 - Leggi `docs/GUIDA_UTENTE.md` per la documentazione completa
