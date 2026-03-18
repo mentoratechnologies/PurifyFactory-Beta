@@ -1,29 +1,29 @@
 {
   "version": "9.1.6",
-  "tier": "pro",
+  "tier": "beta",
 
   "paths": {
-    "input_file": null,
-    "output_dir": null
+    "input_file": "/percorso/al/tuo/dataset.jsonl",
+    "output_dir": "/percorso/output"
   },
 
   "processing": {
     "split_size": 5000,
-    "batch_size": 50,
-    "max_parallel_workers": 4,
-    "worker_timeout_seconds": 300,
+    "batch_size": 20,
+    "max_parallel_workers": 2,
+    "worker_timeout_seconds": 120,
     "recheck_interval_seconds": 30
   },
 
   "ai": {
     "provider": "anthropic",
     "fallback_provider": null,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-haiku-4-5-20251001",
     "temperature": 0.0,
     "max_tokens": 2048,
-    "max_retries": 5,
+    "max_retries": 3,
     "retry_delay_base": 2.0,
-    "system_prompt": "Pulisci il seguente testo: correggi errori grammaticali, rimuovi spazi doppi, normalizza la punteggiatura. Restituisci SOLO il testo pulito, senza commenti o spiegazioni.",
+    "system_prompt": "Correggi solo gli errori meccanici nel testo: apostrofi mancanti, maiuscole errate a inizio frase e refusi ortografici evidenti. Non riformulare, non parafrasare, non migliorare lo stile o la fluidità. Se il testo è già corretto, restituiscilo invariato. Restituisci solo il testo corretto, senza spiegazioni.",
     "api_keys": {
       "anthropic": "INSERISCI_LA_TUA_API_KEY_QUI"
     }
