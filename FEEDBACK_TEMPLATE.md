@@ -1,6 +1,6 @@
 # PurifyFactory v9.1.6 — Template Feedback Betatester
 
-Questo file contiene le domande del programma beta. Copialo in Google Forms o invialo compilato via email a **support@mentoratech.com**.
+Questo file contiene le domande del programma beta. Copialo in Google Forms o invialo compilato via email a **betatesting@purifyfactory.com**.
 
 Scala di valutazione: **1** (pessimo) → **5** (ottimo)
 
@@ -11,6 +11,7 @@ Scala di valutazione: **1** (pessimo) → **5** (ottimo)
 - **Nome / Azienda**: _______________
 - **Data del test**: _______________
 - **OS utilizzato**: ☐ Linux  ☐ macOS  ☐ Windows
+- **Tier di partecipazione**: ☐ Tier 1 — Contributor  ☐ Tier 2 — Certificatore
 - **Metodo di installazione**: ☐ Binario compilato  ☐ Pacchetto Python
 - **Provider AI utilizzato**: ☐ OpenAI  ☐ Anthropic  ☐ Gemini  ☐ Locale (Ollama/vLLM)
 - **Dimensione dataset testato**: _______________  record
@@ -36,6 +37,23 @@ _______________
 ---
 
 ## Sezione 2 — Pipeline di elaborazione
+
+**2.0 Provider AI utilizzati durante il test**
+
+*(Per la certificazione TRL5 — Tier 2 — è obbligatorio testare almeno 2 provider diversi)*
+
+| Provider | Usato? | Modello specifico | Note |
+|---|---|---|---|
+| OpenAI | ☐ Sì  ☐ No | _______________ | |
+| Anthropic (Claude) | ☐ Sì  ☐ No | _______________ | |
+| Google Gemini | ☐ Sì  ☐ No | _______________ | |
+| Locale — Ollama | ☐ Sì  ☐ No | _______________ | |
+| Locale — vLLM | ☐ Sì  ☐ No | _______________ | |
+
+**2.0.1** Se hai usato più provider, il comportamento è stato coerente tra di essi?
+`[ ] Non applicabile (1 solo provider)  [ ] Sì, coerente  [ ] No — differenze:`
+
+_______________________________________________
 
 **2.1** Il flusso split → orchestrate → process era intuitivo?
 `[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5`
@@ -69,6 +87,19 @@ _______________
 **3.4** Se hai adattato il system prompt, cosa hai modificato?
 
 _______________
+
+**3.5 Campione obbligatorio per Tier 2 — Certificatori** *(facoltativo per Tier 1)*
+
+Allega a questa email un file separato (JSON, JSONL, CSV o TXT) contenente almeno
+**20 coppie input/output** rappresentative del tuo dataset.
+
+Requisiti del campione:
+- Deve includere sia record "facili" (testo quasi pulito) che record "difficili"
+  (testo con errori multipli)
+- Non deve contenere dati personali, riservati o confidenziali
+- Deve essere rappresentativo del dominio e della lingua del tuo dataset reale
+
+`[ ] Campione allegato  [ ] Non allego il campione (Tier 1 o scelta personale)`
 
 ---
 
@@ -130,6 +161,23 @@ _______________
 
 ---
 
+## Sezione 7 — Rimborso
+
+**7.1** Tier di appartenenza (conferma):
+`[ ] Tier 1 — Contributor (dataset 500–4.999 record)`
+`[ ] Tier 2 — Certificatore (dataset ≥ 5.000 record, ≥ 2 provider)`
+
+**7.2** Desideri richiedere il rimborso forfettario previsto dal tuo tier?
+`[ ] Sì  [ ] No, rinuncio al rimborso`
+
+**7.3** Se sì, metodo di pagamento preferito:
+`[ ] PayPal  [ ] Bonifico bancario (SEPA)`
+
+*(Non inserire qui i tuoi dati di pagamento. Li comunicherai a Mentora Technologies
+su richiesta esplicita via email, dopo la validazione del feedback.)*
+
+---
+
 ## Note aggiuntive
 
 Spazio libero per qualsiasi commento non coperto dalle domande precedenti.
@@ -140,4 +188,4 @@ _______________
 
 Grazie per il tuo contributo. Il tuo feedback è direttamente integrato nello sviluppo di PurifyFactory.
 
-**Mentora Technologies** — support@mentoratech.com
+**Mentora Technologies** — betatesting@purifyfactory.com

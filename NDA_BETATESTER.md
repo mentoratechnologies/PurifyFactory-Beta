@@ -20,7 +20,7 @@
 
 **Tra:**
 
-**[NOME COGNOME]** (di seguito «il Titolare»), persona fisica residente in Grottaferrata (RM), Italia, operante sotto il nome commerciale **Mentora Technologies**, raggiungibile all'indirizzo email: a.lattanzi@mentoratechnologies.com
+**[NOME COGNOME]** (di seguito «il Titolare»), persona fisica residente in Grottaferrata (RM), Italia, operante sotto il nome commerciale **Mentora Technologies**, raggiungibile all'indirizzo email: betatesting@purifyfactory.com
 
 **e**
 
@@ -45,6 +45,13 @@ Nel presente Accordo si intende per:
 - **«Provider AI»**: servizi di intelligenza artificiale di terze parti (es. OpenAI, Anthropic, Google Gemini) utilizzati dal Software per l'elaborazione del testo tramite le API Key del Betatester.
 - **«Informazioni Riservate»**: qualsiasi informazione relativa al Software, al suo funzionamento interno, al suo codice sorgente, agli algoritmi, al sistema di licensing, ai risultati del testing e a qualsiasi aspetto tecnico o commerciale non accessibile pubblicamente.
 - **«Feedback»**: qualsiasi segnalazione di bug, suggerimento, idea, proposta o contributo di qualsiasi natura fornito dal Betatester al Titolare nell'ambito del programma beta.
+- **«Tier 1 — Contributor»**: categoria di Betatester che elabora un Dataset di Input
+  composto da 500 a 4.999 record. Non contribuisce alla certificazione TRL5.
+  Può ricevere rimborso forfettario di €5 alle condizioni dell'Art. 6bis.
+- **«Tier 2 — Certificatore»**: categoria di Betatester che elabora un Dataset di Input
+  composto da almeno 5.000 record utilizzando almeno 2 Provider AI diversi.
+  Contribuisce alla certificazione TRL5. Può ricevere rimborso forfettario di €10
+  alle condizioni dell'Art. 6bis.
 
 ---
 
@@ -113,9 +120,80 @@ f) la pubblicazione, la divulgazione o la diffusione di benchmark, metriche di p
 
 **6.2** Tutti i costi derivanti dall'utilizzo delle API dei Provider AI — inclusi, a titolo esemplificativo, costi per token elaborati, abbonamenti, costi di banda e qualsiasi altro onere — sono **esclusivamente e integralmente a carico del Betatester**. Il Titolare non è parte del rapporto commerciale tra il Betatester e i Provider AI.
 
-**6.3** Il Titolare non fornisce, in nessuna circostanza e a nessun titolo, rimborsi, crediti, compensi monetari o in natura relativi ai costi API sostenuti dal Betatester nell'ambito del programma beta.
+**6.3** Il Titolare non fornisce rimborsi relativi ai costi API sostenuti dal
+Betatester, ad eccezione di quanto previsto dall'Art. 6bis per i Betatester
+che completano il programma beta secondo i requisiti del proprio Tier.
 
 **6.4** Il Betatester è responsabile del rispetto dei termini di servizio e delle policy d'uso dei Provider AI utilizzati. Il Titolare non è responsabile di eventuali sospensioni o limitazioni degli account API del Betatester.
+
+---
+
+### Articolo 6bis — Rimborso Forfettario ai Betatester
+
+**6bis.1 Rimborso Tier 1 — Contributor.** Il Betatester classificato Tier 1
+che soddisfa tutti i seguenti requisiti può richiedere un rimborso forfettario di €5:
+
+a) elaborazione completata su un Dataset di Input di 500–4.999 record;
+b) compilazione completa e conforme del FEEDBACK_TEMPLATE.md;
+c) invio dei Log anonimizzati tramite `export-debug`;
+d) validazione positiva del feedback da parte del Titolare.
+
+**6bis.2 Rimborso Tier 2 — Certificatore.** Il Betatester classificato Tier 2
+che soddisfa tutti i seguenti requisiti può richiedere un rimborso forfettario di €10:
+
+a) elaborazione completata su un Dataset di Input di almeno 5.000 record;
+b) utilizzo di almeno 2 Provider AI diversi durante il testing;
+c) compilazione completa e dettagliata del FEEDBACK_TEMPLATE.md;
+d) invio dei Log anonimizzati tramite `export-debug`;
+e) allegato di un campione di almeno 20 coppie input/output prive di dati
+   personali o confidenziali;
+f) validazione positiva del feedback da parte del Titolare.
+
+**6bis.3 Condizioni generali del rimborso.**
+
+a) Il rimborso è erogato **a discrezione esclusiva del Titolare**. Il Titolare si
+   riserva il diritto di non erogarlo qualora ritenga il feedback incompleto,
+   non valido, non conforme ai requisiti del Tier o non utile ai fini dello
+   sviluppo del Software. Il Titolare non è tenuto a motivare tale decisione.
+
+b) Il rimborso è erogato **entro 30 (trenta) giorni** dalla comunicazione scritta
+   di validazione positiva del feedback da parte del Titolare.
+
+c) Il rimborso è effettuato **esclusivamente tramite PayPal o bonifico bancario
+   immediato (SEPA)**. Il Betatester che desidera ricevere il rimborso deve
+   comunicare i propri dati di pagamento (indirizzo PayPal o IBAN) su richiesta
+   esplicita del Titolare, via email, dopo la validazione del feedback.
+   Il Betatester non deve inserire dati di pagamento nel FEEDBACK_TEMPLATE.md
+   né in nessun documento pubblico.
+
+d) Il rimborso è forfettario e non commisurato ai costi API effettivamente
+   sostenuti dal Betatester.
+
+e) Il rimborso non è cumulabile con altri sconti, rimborsi, compensi o agevolazioni
+   di qualsiasi natura.
+
+f) Il rimborso non è trasferibile a terzi.
+
+g) Il diritto al rimborso decade qualora il Betatester violi qualsiasi disposizione
+   del presente Accordo.
+
+**6bis.4 Benefit non monetari.** Indipendentemente dal rimborso, i Betatester
+che completano il programma ricevono i seguenti benefit non monetari:
+
+| Benefit | Tier 1 — Contributor | Tier 2 — Certificatore |
+|---|---|---|
+| Accesso anticipato al SaaS | Sì | Sì |
+| Licenza gratuita | 6 mesi dalla release commerciale | Lifetime |
+| Aggiornamenti automatici inclusi | Sì (per i 6 mesi) | No |
+| Supporto | Standard | Limitato a bug critici |
+
+La «licenza gratuita lifetime» concessa ai Certificatori Tier 2 è una licenza
+personale, non trasferibile, che consente l'utilizzo del Software nella versione
+disponibile al momento del rilascio commerciale. Non include il diritto a ricevere
+aggiornamenti futuri, nuove funzionalità o versioni successive del Software.
+Il supporto è limitato alla segnalazione e alla correzione di bug critici che
+rendano il Software inutilizzabile; non include supporto per configurazione,
+ottimizzazione, nuove funzionalità o problemi non riproducibili.
 
 ---
 
@@ -146,7 +224,7 @@ d) debbano essere divulgate per obbligo di legge o per ordine dell'autorità giu
 
 **8.1** Nel caso in cui il Betatester scopra o ragionevolmente sospetti l'esistenza di una vulnerabilità di sicurezza nel Software, è tenuto a:
 
-a) notificare il Titolare entro **7 (sette) giorni** dalla scoperta, all'indirizzo a.lattanzi@mentoratechnologies.com con oggetto «[SECURITY] Vulnerabilità — PurifyFactory v9.1.6»;
+a) notificare il Titolare entro **7 (sette) giorni** dalla scoperta, all'indirizzo betatesting@purifyfactory.com con oggetto «[SECURITY] Vulnerabilità — PurifyFactory v9.1.6»;
 b) fornire una descrizione dettagliata della vulnerabilità, comprensiva delle modalità di riproduzione e dell'impatto stimato;
 c) mantenere riservata la vulnerabilità per un periodo di **15 (quindici) giorni** dalla data di notifica al Titolare, per consentire la correzione.
 
@@ -168,7 +246,7 @@ c) mantenere riservata la vulnerabilità per un periodo di **15 (quindici) giorn
 
 ### Articolo 10 — Trattamento dei Dati Personali
 
-**10.1 Titolare del Trattamento.** Ai sensi del Regolamento (UE) 2016/679 («GDPR»), il Titolare del trattamento è **[NOME COGNOME]**, persona fisica residente in Grottaferrata (RM), Italia, raggiungibile all'indirizzo a.lattanzi@mentoratechnologies.com.
+**10.1 Titolare del Trattamento.** Ai sensi del Regolamento (UE) 2016/679 («GDPR»), il Titolare del trattamento è **[NOME COGNOME]**, persona fisica residente in Grottaferrata (RM), Italia, raggiungibile all'indirizzo betatesting@purifyfactory.com.
 
 **10.2 Dati raccolti.** Il Titolare tratta esclusivamente i dati volontariamente trasmessi dal Betatester nell'ambito del programma beta:
 
@@ -205,7 +283,7 @@ c) mantenere riservata la vulnerabilità per un periodo di **15 (quindici) giorn
 
 In ogni caso, su richiesta esplicita del Betatester, i dati personali saranno eliminati entro 30 giorni dalla richiesta, compatibilmente con eventuali obblighi di legge.
 
-**10.6 Diritti dell'interessato.** Il Betatester ha diritto di accesso, rettifica, cancellazione («diritto all'oblio»), limitazione del trattamento, portabilità dei dati e opposizione al trattamento, da esercitare scrivendo a a.lattanzi@mentoratechnologies.com. Ha inoltre il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali (www.garanteprivacy.it).
+**10.6 Diritti dell'interessato.** Il Betatester ha diritto di accesso, rettifica, cancellazione («diritto all'oblio»), limitazione del trattamento, portabilità dei dati e opposizione al trattamento, da esercitare scrivendo a betatesting@purifyfactory.com. Ha inoltre il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali (www.garanteprivacy.it).
 
 **10.7 Trasferimento a terzi.** I dati non vengono ceduti, venduti o comunicati a soggetti terzi, salvo che per obbligo di legge o ordine dell'autorità giudiziaria.
 
@@ -217,12 +295,12 @@ In ogni caso, su richiesta esplicita del Betatester, i dati personali saranno el
 
 | Finalità | Canale e modalità |
 |---|---|
-| Supporto tecnico e segnalazione bug | a.lattanzi@mentoratechnologies.com |
-| Invio Log anonimizzati (`export-debug`) | a.lattanzi@mentoratechnologies.com — allegare il file ZIP prodotto dal comando |
-| Invio Feedback strutturato | a.lattanzi@mentoratechnologies.com — allegare `FEEDBACK_TEMPLATE.md` compilato |
-| Condivisione volontaria Dataset | a.lattanzi@mentoratechnologies.com |
-| Segnalazione vulnerabilità di sicurezza | a.lattanzi@mentoratechnologies.com — oggetto: [SECURITY] |
-| Comunicazioni legali | a.lattanzi@mentoratechnologies.com |
+| Supporto tecnico e segnalazione bug | betatesting@purifyfactory.com |
+| Invio Log anonimizzati (`export-debug`) | betatesting@purifyfactory.com — allegare il file ZIP prodotto dal comando |
+| Invio Feedback strutturato | betatesting@purifyfactory.com — allegare `FEEDBACK_TEMPLATE.md` compilato |
+| Condivisione volontaria Dataset | betatesting@purifyfactory.com |
+| Segnalazione vulnerabilità di sicurezza | betatesting@purifyfactory.com — oggetto: [SECURITY] |
+| Comunicazioni legali | betatesting@purifyfactory.com |
 
 **11.2** Per tutte le comunicazioni, il Betatester deve indicare nell'oggetto dell'email: «Beta v9.1.6 — [Cognome del Betatester]».
 
@@ -314,7 +392,7 @@ c) confermare per iscritto al Titolare l'avvenuta eliminazione entro **7 (sette)
 
 **16.1** Il presente Accordo è regolato dalla legge italiana.
 
-**16.2** Per qualsiasi controversia relativa all'interpretazione, all'esecuzione o alla risoluzione del presente Accordo, le parti eleggono come **foro competente esclusivo il Tribunale Ordinario di Roma**.
+**16.2** Per qualsiasi controversia relativa all'interpretazione, all'esecuzione o alla risoluzione del presente Accordo, le parti eleggono come **foro competente esclusivo il Tribunale Ordinario di Velletri**.
 
 **16.3** Prima di adire l'autorità giudiziaria, le parti si impegnano a tentare una risoluzione amichevole della controversia. La parte che intende avviare una procedura giudiziale è tenuta a notificare previamente per iscritto il proprio disaccordo, concedendo all'altra parte un termine di **30 (trenta) giorni** per raggiungere una soluzione concordata.
 
@@ -365,6 +443,8 @@ Codice Fiscale: ____________________________________________________
 
 Indirizzo email: ___________________________________________________
 
+**Tier di partecipazione:** ☐ Tier 1 — Contributor  ☐ Tier 2 — Certificatore
+
 Luogo e Data: _____________________________________________________
 
 Firma: ____________________________________________________________
@@ -380,7 +460,7 @@ Firma: ____________________________________________________________
 
 **Between:**
 
-**[FIRST NAME LAST NAME]** (hereinafter «the Owner»), a natural person residing in Grottaferrata (RM), Italy, operating under the trade name **Mentora Technologies**, reachable at: a.lattanzi@mentoratechnologies.com
+**[FIRST NAME LAST NAME]** (hereinafter «the Owner»), a natural person residing in Grottaferrata (RM), Italy, operating under the trade name **Mentora Technologies**, reachable at: betatesting@purifyfactory.com
 
 **and**
 
@@ -405,6 +485,13 @@ In this Agreement, the following definitions apply:
 - **«AI Provider»**: third-party artificial intelligence services (e.g., OpenAI, Anthropic, Google Gemini) used by the Software to process text via the Beta Tester's API Keys.
 - **«Confidential Information»**: any information relating to the Software, its internal workings, source code, algorithms, licensing system, testing results, and any technical or commercial aspects not publicly available.
 - **«Feedback»**: any bug report, suggestion, idea, proposal, or contribution of any nature provided by the Beta Tester to the Owner during the beta program.
+- **«Tier 1 — Contributor»**: category of Beta Tester who processes an Input Dataset
+  of 500 to 4,999 records. Does not contribute to TRL5 certification.
+  May receive a €5 flat reimbursement under the conditions of Art. 6bis.
+- **«Tier 2 — Certifier»**: category of Beta Tester who processes an Input Dataset
+  of at least 5,000 records using at least 2 different AI Providers.
+  Contributes to TRL5 certification. May receive a €10 flat reimbursement
+  under the conditions of Art. 6bis.
 
 ---
 
@@ -473,9 +560,79 @@ f) publishing, disclosing, or distributing benchmarks, performance metrics, comp
 
 **6.2** All costs arising from the use of AI Provider APIs — including, without limitation, token processing costs, subscriptions, bandwidth costs, and any other charges — are **exclusively and entirely borne by the Beta Tester**. The Owner is not party to the commercial relationship between the Beta Tester and the AI Providers.
 
-**6.3** The Owner provides no reimbursements, credits, monetary compensation, or compensation of any kind, under any circumstances or for any reason, in connection with API costs incurred by the Beta Tester during the beta program.
+**6.3** The Owner does not provide reimbursements for API costs incurred by the
+Beta Tester, except as provided in Art. 6bis for Beta Testers who complete
+the beta program according to their Tier requirements.
 
 **6.4** The Beta Tester is responsible for compliance with the terms of service and acceptable use policies of any AI Provider used. The Owner bears no responsibility for any suspension or restriction of the Beta Tester's API accounts.
+
+---
+
+### Article 6bis — Flat Reimbursement for Beta Testers
+
+**6bis.1 Tier 1 — Contributor reimbursement.** A Beta Tester classified as Tier 1
+who meets all of the following requirements may request a flat reimbursement of €5:
+
+a) processing completed on an Input Dataset of 500–4,999 records;
+b) complete and compliant completion of the FEEDBACK_TEMPLATE.md;
+c) submission of anonymized logs via `export-debug`;
+d) positive feedback validation by the Owner.
+
+**6bis.2 Tier 2 — Certifier reimbursement.** A Beta Tester classified as Tier 2
+who meets all of the following requirements may request a flat reimbursement of €10:
+
+a) processing completed on an Input Dataset of at least 5,000 records;
+b) use of at least 2 different AI Providers during testing;
+c) complete and detailed completion of the FEEDBACK_TEMPLATE.md;
+d) submission of anonymized logs via `export-debug`;
+e) attachment of a sample of at least 20 input/output pairs free of personal
+   or confidential data;
+f) positive feedback validation by the Owner.
+
+**6bis.3 General reimbursement conditions.**
+
+a) Reimbursement is issued **at the sole discretion of the Owner**. The Owner
+   reserves the right not to issue it if the feedback is deemed incomplete,
+   invalid, non-compliant with Tier requirements, or not useful for Software
+   development. The Owner is not obligated to provide reasons for this decision.
+
+b) Reimbursement is issued **within 30 (thirty) days** of written notification
+   of positive feedback validation by the Owner.
+
+c) Reimbursement is made **exclusively via PayPal or immediate bank transfer
+   (SEPA)**. A Beta Tester wishing to receive reimbursement must provide their
+   payment details (PayPal address or IBAN) upon explicit request from the Owner,
+   via email, after feedback validation. The Beta Tester must not include payment
+   details in the FEEDBACK_TEMPLATE.md or any public document.
+
+d) Reimbursement is a flat amount and is not proportional to API costs actually
+   incurred by the Beta Tester.
+
+e) Reimbursement is non-cumulative with any other discounts, reimbursements,
+   compensation, or benefits of any kind.
+
+f) Reimbursement is non-transferable to third parties.
+
+g) The right to reimbursement is forfeited if the Beta Tester breaches any
+   provision of this Agreement.
+
+**6bis.4 Non-monetary benefits.** Regardless of reimbursement, Beta Testers
+who complete the program receive the following non-monetary benefits:
+
+| Benefit | Tier 1 — Contributor | Tier 2 — Certifier |
+|---|---|---|
+| Early SaaS access | Yes | Yes |
+| Free license | 6 months from commercial release | Lifetime |
+| Automatic updates included | Yes (for the 6 months) | No |
+| Support | Standard | Limited to critical bugs |
+
+The «lifetime free license» granted to Tier 2 Certifiers is a personal,
+non-transferable license that allows use of the Software in the version available
+at the time of commercial release. It does not include the right to receive future
+updates, new features, or subsequent versions of the Software. Support is limited
+to reporting and fixing critical bugs that render the Software unusable; it does
+not include support for configuration, optimization, new features, or
+non-reproducible issues.
 
 ---
 
@@ -506,7 +663,7 @@ d) is required to be disclosed by law or judicial order, provided the Owner is n
 
 **8.1** Should the Beta Tester discover or reasonably suspect the existence of a security vulnerability in the Software, they are required to:
 
-a) notify the Owner within **7 (seven) days** of discovery, at a.lattanzi@mentoratechnologies.com with subject line: «[SECURITY] Vulnerability — PurifyFactory v9.1.6»;
+a) notify the Owner within **7 (seven) days** of discovery, at betatesting@purifyfactory.com with subject line: «[SECURITY] Vulnerability — PurifyFactory v9.1.6»;
 b) provide a detailed description of the vulnerability, including reproduction steps and estimated impact;
 c) keep the vulnerability confidential for a period of **15 (fifteen) days** from the date of notification to the Owner, to allow time for remediation.
 
@@ -528,7 +685,7 @@ c) keep the vulnerability confidential for a period of **15 (fifteen) days** fro
 
 ### Article 10 — Personal Data Processing
 
-**10.1 Data Controller.** Pursuant to Regulation (EU) 2016/679 («GDPR»), the Data Controller is **[FIRST NAME LAST NAME]**, a natural person residing in Grottaferrata (RM), Italy, reachable at a.lattanzi@mentoratechnologies.com.
+**10.1 Data Controller.** Pursuant to Regulation (EU) 2016/679 («GDPR»), the Data Controller is **[FIRST NAME LAST NAME]**, a natural person residing in Grottaferrata (RM), Italy, reachable at betatesting@purifyfactory.com.
 
 **10.2 Data collected.** The Owner processes only data voluntarily transmitted by the Beta Tester in connection with the beta program:
 
@@ -565,7 +722,7 @@ c) keep the vulnerability confidential for a period of **15 (fifteen) days** fro
 
 In all cases, upon explicit request from the Beta Tester, personal data will be deleted within 30 days of the request, subject to any applicable legal obligations.
 
-**10.6 Data subject rights.** The Beta Tester has the right to access, rectify, erase («right to be forgotten»), restrict processing, data portability, and object to processing, exercisable by writing to a.lattanzi@mentoratechnologies.com. The Beta Tester also has the right to lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali, www.garanteprivacy.it).
+**10.6 Data subject rights.** The Beta Tester has the right to access, rectify, erase («right to be forgotten»), restrict processing, data portability, and object to processing, exercisable by writing to betatesting@purifyfactory.com. The Beta Tester also has the right to lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali, www.garanteprivacy.it).
 
 **10.7 Third-party transfers.** Data is not sold, assigned, or communicated to third parties, except as required by law or judicial order.
 
@@ -577,12 +734,12 @@ In all cases, upon explicit request from the Beta Tester, personal data will be 
 
 | Purpose | Channel and method |
 |---|---|
-| Technical support and bug reports | a.lattanzi@mentoratechnologies.com |
-| Submission of Anonymized Logs (`export-debug`) | a.lattanzi@mentoratechnologies.com — attach the ZIP file generated by the command |
-| Structured Feedback submission | a.lattanzi@mentoratechnologies.com — attach completed `FEEDBACK_TEMPLATE.md` |
-| Voluntary Dataset submission | a.lattanzi@mentoratechnologies.com |
-| Security vulnerability disclosure | a.lattanzi@mentoratechnologies.com — subject: [SECURITY] |
-| Legal communications | a.lattanzi@mentoratechnologies.com |
+| Technical support and bug reports | betatesting@purifyfactory.com |
+| Submission of Anonymized Logs (`export-debug`) | betatesting@purifyfactory.com — attach the ZIP file generated by the command |
+| Structured Feedback submission | betatesting@purifyfactory.com — attach completed `FEEDBACK_TEMPLATE.md` |
+| Voluntary Dataset submission | betatesting@purifyfactory.com |
+| Security vulnerability disclosure | betatesting@purifyfactory.com — subject: [SECURITY] |
+| Legal communications | betatesting@purifyfactory.com |
 
 **11.2** For all communications, the Beta Tester must include in the email subject line: «Beta v9.1.6 — [Beta Tester Surname]».
 
@@ -674,7 +831,7 @@ c) confirm deletion in writing to the Owner within **7 (seven) days**.
 
 **16.1** This Agreement is governed by Italian law.
 
-**16.2** For any dispute relating to the interpretation, performance, or termination of this Agreement, the parties elect as **exclusive competent court the Tribunale Ordinario di Roma** (Ordinary Court of Rome).
+**16.2** For any dispute relating to the interpretation, performance, or termination of this Agreement, the parties elect as **exclusive competent court the Tribunale Ordinario di Velletri** (Ordinary Court of Velletri).
 
 **16.3** Prior to initiating legal proceedings, the parties undertake to attempt an amicable resolution. The party intending to commence proceedings must first notify the other party in writing, granting a period of **30 (thirty) days** to reach an agreed solution.
 
@@ -725,6 +882,8 @@ Italian Tax Code (Codice Fiscale) / ID Number: _____________________
 
 Email Address: ________________________________________________
 
+**Participation Tier:** ☐ Tier 1 — Contributor  ☐ Tier 2 — Certifier
+
 Place and Date: ________________________________________________
 
 Signature: ____________________________________________________
@@ -732,5 +891,3 @@ Signature: ____________________________________________________
 ---
 
 *In case of discrepancy between the Italian and English versions of this Agreement, the Italian version shall prevail.*
-
-*In caso di discrepanza tra la versione italiana e quella inglese del presente Accordo, prevale la versione italiana.*

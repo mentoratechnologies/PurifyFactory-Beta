@@ -88,6 +88,92 @@ PurifyFactory automatizza questa fase critica del pipeline ML:
 
 ---
 
+## Tier di partecipazione
+
+Il programma beta prevede due livelli di partecipazione. Scegli quello adatto alla dimensione del tuo dataset.
+
+---
+
+### Tier 1 — Contributor
+
+**Requisiti dataset:** 500–4.999 record
+
+**Cosa ti chiediamo:**
+- Elaborare il dataset con almeno 1 provider AI (online o locale)
+- Compilare il FEEDBACK_TEMPLATE.md in modo completo
+- Inviare i Log anonimizzati (`export-debug`) a betatesting@purifyfactory.com
+
+**Cosa ricevi:**
+- Accesso anticipato al SaaS PurifyFactory (prima del lancio pubblico)
+- Licenza gratuita per 6 mesi dalla data di rilascio commerciale
+- Rimborso forfettario di €5 (vedi condizioni sotto)
+
+**Nota:** Il Tier 1 non contribuisce alla certificazione TRL5, ma è essenziale per il
+feedback qualitativo, la ricerca di bug e la validazione dell'esperienza utente.
+
+---
+
+### Tier 2 — Certificatore
+
+**Requisiti dataset:** ≥ 5.000 record (consigliati ≥ 10.000 per validazione completa)
+
+**Cosa ti chiediamo:**
+- Elaborare il dataset con **almeno 2 provider AI diversi** (es. OpenAI + Anthropic,
+  oppure online + locale)
+- Compilare il FEEDBACK_TEMPLATE.md in modo completo e dettagliato
+- Inviare i Log anonimizzati (`export-debug`) a betatesting@purifyfactory.com
+- Allegare un campione di almeno 20 coppie input/output rappresentative del dataset,
+  prive di dati personali o confidenziali
+
+**Cosa ricevi:**
+- Accesso anticipato al SaaS PurifyFactory (prima del lancio pubblico)
+- Licenza gratuita lifetime, senza diritto a futuri aggiornamenti automatici,
+  con supporto limitato esclusivamente alla segnalazione e correzione di bug critici
+- Rimborso forfettario di €10 (vedi condizioni sotto)
+
+**Nota:** Il Tier 2 contribuisce direttamente alla certificazione TRL5 necessaria
+per il rilascio del SaaS commerciale. Il tuo contributo è fondamentale.
+
+---
+
+### Condizioni di rimborso
+
+Il rimborso è:
+- **A discrezione esclusiva di Mentora Technologies**, che si riserva il diritto di
+  non erogarlo in caso di feedback incompleto, non valido o non conforme ai requisiti
+  del tier di appartenenza
+- Erogato **entro 30 giorni** dalla validazione positiva del feedback da parte di
+  Mentora Technologies
+- Effettuato **esclusivamente tramite PayPal o bonifico bancario immediato** (SEPA)
+- Non cumulabile con altri sconti, rimborsi o compensi
+- Non trasferibile a terzi
+
+Per ricevere il rimborso, il Betatester deve:
+1. Completare il testing secondo i requisiti del proprio tier
+2. Inviare il FEEDBACK_TEMPLATE.md compilato a betatesting@purifyfactory.com
+3. Attendere la validazione da parte di Mentora Technologies
+4. Comunicare i propri dati PayPal o IBAN su richiesta esplicita di Mentora Technologies
+
+Mentora Technologies non è tenuta a giustificare la mancata erogazione del rimborso
+in caso di feedback ritenuto non valido.
+
+---
+
+### Come candidarsi
+
+Invia una email a **waitlist@purifyfactory.com** con:
+- Oggetto: `[BETA] Candidatura — [Tier 1 / Tier 2] — [Tuo Cognome]`
+- Dimensione approssimativa del tuo dataset
+- Provider AI che intendi utilizzare
+- Sistema operativo (Linux / Windows / macOS)
+- Breve descrizione del tuo caso d'uso (1-3 righe)
+
+Riceverai risposta entro 48 ore con le istruzioni per la firma dell'NDA e il rilascio
+della licenza. Una volta accettato nel programma, utilizzerai **betatesting@purifyfactory.com**
+per tutte le comunicazioni successive.
+
+---
+
 ## Requisiti
 
 - **Sistema operativo**: Linux x86_64 (Ubuntu 20.04+, Debian 11+, qualsiasi distro moderna)
@@ -105,20 +191,20 @@ PurifyFactory automatizza questa fase critica del pipeline ML:
 ### 1 — Scarica il pacchetto dalla sezione Releases
 
 Vai alla sezione [**Releases**](../../releases) di questo repository e scarica:
-- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz` — il software (65 MB)
-- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256` — checksum di verifica
+- `purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz` — il software (~150 MB)
+- `purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz.sha256` — checksum di verifica
 
 **Verifica l'integrità prima di estrarre** (consigliato):
 ```bash
-sha256sum -c purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256
-# Deve rispondere: purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz: OK
+sha256sum -c purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz.sha256
+# Deve rispondere: purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz: OK
 ```
 
 ### 2 — Estrai il pacchetto e genera il tuo fingerprint hardware
 
 ```bash
-tar xzf purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz
-cd purifyfactory-v9.1.6-beta.2-linux-x64
+tar xzf purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz
+cd purifyfactory-v9.1.6-beta.3-linux-x64
 ./purifyfactory hardware-id
 ```
 
@@ -355,6 +441,90 @@ PurifyFactory automates this critical phase of the ML pipeline:
 
 ---
 
+## Participation Tiers
+
+The beta program has two levels of participation. Choose the one that matches your dataset size.
+
+---
+
+### Tier 1 — Contributor
+
+**Dataset requirement:** 500–4,999 records
+
+**What we ask:**
+- Process the dataset with at least 1 AI provider (online or local)
+- Complete the FEEDBACK_TEMPLATE.md in full
+- Send anonymized logs (`export-debug`) to betatesting@purifyfactory.com
+
+**What you receive:**
+- Early access to PurifyFactory SaaS (before public launch)
+- Free license for 6 months from commercial release date
+- €5 flat reimbursement (see conditions below)
+
+**Note:** Tier 1 does not contribute to TRL5 certification, but is essential for
+qualitative feedback, bug hunting, and user experience validation.
+
+---
+
+### Tier 2 — Certifier
+
+**Dataset requirement:** ≥ 5,000 records (≥ 10,000 recommended for full validation)
+
+**What we ask:**
+- Process the dataset with **at least 2 different AI providers** (e.g., OpenAI + Anthropic,
+  or online + local)
+- Complete the FEEDBACK_TEMPLATE.md in full and in detail
+- Send anonymized logs (`export-debug`) to betatesting@purifyfactory.com
+- Attach a sample of at least 20 representative input/output pairs from the dataset,
+  free of personal or confidential data
+
+**What you receive:**
+- Early access to PurifyFactory SaaS (before public launch)
+- Lifetime free license, without rights to future automatic updates,
+  with support limited exclusively to reporting and fixing critical bugs
+- €10 flat reimbursement (see conditions below)
+
+**Note:** Tier 2 directly contributes to the TRL5 certification required for the
+commercial SaaS release. Your contribution is essential.
+
+---
+
+### Reimbursement conditions
+
+Reimbursement is:
+- **At the sole discretion of Mentora Technologies**, which reserves the right not to
+  issue it in case of incomplete, invalid, or non-compliant feedback
+- Issued **within 30 days** of positive feedback validation by Mentora Technologies
+- Made **exclusively via PayPal or immediate bank transfer** (SEPA)
+- Non-cumulative with other discounts, reimbursements, or compensation
+- Non-transferable to third parties
+
+To receive reimbursement, the Beta Tester must:
+1. Complete testing according to their tier requirements
+2. Send the completed FEEDBACK_TEMPLATE.md to betatesting@purifyfactory.com
+3. Await validation by Mentora Technologies
+4. Provide PayPal details or IBAN upon explicit request from Mentora Technologies
+
+Mentora Technologies is not obligated to justify non-payment of reimbursement
+in the event of feedback deemed invalid.
+
+---
+
+### How to apply
+
+Send an email to **waitlist@purifyfactory.com** with:
+- Subject: `[BETA] Application — [Tier 1 / Tier 2] — [Your Last Name]`
+- Approximate size of your dataset
+- AI provider(s) you plan to use
+- Operating system (Linux / Windows / macOS)
+- Brief description of your use case (1–3 lines)
+
+You will receive a reply within 48 hours with instructions for signing the NDA
+and receiving your license. Once accepted into the program, use **betatesting@purifyfactory.com**
+for all subsequent communications.
+
+---
+
 ## Requirements
 
 - **Operating system**: Linux x86_64 (Ubuntu 20.04+, Debian 11+, any modern distro)
@@ -372,20 +542,20 @@ PurifyFactory automates this critical phase of the ML pipeline:
 ### 1 — Download the package from the Releases section
 
 Go to the [**Releases**](../../releases) section of this repository and download:
-- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz` — the software (65 MB)
-- `purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256` — verification checksum
+- `purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz` — the software (~150 MB)
+- `purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz.sha256` — verification checksum
 
 **Verify integrity before extracting** (recommended):
 ```bash
-sha256sum -c purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz.sha256
-# Expected: purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz: OK
+sha256sum -c purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz.sha256
+# Expected: purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz: OK
 ```
 
 ### 2 — Extract the package and generate your hardware fingerprint
 
 ```bash
-tar xzf purifyfactory-v9.1.6-beta.2-linux-x64.tar.gz
-cd purifyfactory-v9.1.6-beta.2-linux-x64
+tar xzf purifyfactory-v9.1.6-beta.3-linux-x64.tar.gz
+cd purifyfactory-v9.1.6-beta.3-linux-x64
 ./purifyfactory hardware-id
 ```
 
