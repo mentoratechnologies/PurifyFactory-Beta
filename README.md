@@ -24,12 +24,13 @@ Il tuo contributo è essenziale: i tuoi dataset reali e le tue osservazioni ci p
 
 ---
 
-## ⚠️ Attenzione: API key richiesta — a tue spese
+## ⚠️ API key richiesta
 
 > **PurifyFactory utilizza API di intelligenza artificiale esterne per elaborare il testo.**
-> **Queste API non sono incluse nel software e non sono fornite da Mentora Technologies.**
+> Queste API non sono incluse nel software e non sono fornite da Mentora Technologies.
 >
-> Prima di usare il software devi disporre di una API key attiva e con crediti sufficienti di uno dei provider supportati:
+> Prima di usare il software devi disporre di una API key attiva e con crediti sufficienti
+> di uno dei provider supportati:
 >
 > | Provider | Dove ottenerla | Costo indicativo |
 > |---|---|---|
@@ -38,9 +39,14 @@ Il tuo contributo è essenziale: i tuoi dataset reali e le tue osservazioni ci p
 > | **Google Gemini** | aistudio.google.com | ~$0.075–$0.30 per milione di token (gemini-flash) |
 > | **Locale (Ollama/vLLM)** | — | Costo di infrastruttura proprio |
 >
-> **I costi di elaborazione sono interamente a tuo carico.** Per un dataset di test da 1.000 record il costo tipico con gpt-4o-mini è inferiore a $0.10.
+> **I costi di elaborazione API sono a tuo carico.** Per riferimento: con gpt-4o-mini,
+> 1.000 record costano meno di $0.10 e 10.000 record meno di $1.00.
 >
-> Monitora i tuoi consumi direttamente sulla dashboard del tuo provider API.
+> Il programma beta prevede un **rimborso forfettario** (€5 Tier 1 / €10 Tier 2) che
+> nella maggior parte dei casi copre ampiamente i costi API sostenuti. Il rimborso è
+> a discrezione di Mentora Technologies — vedi le [Condizioni di rimborso](#condizioni-di-rimborso).
+>
+> Monitora i tuoi consumi sulla dashboard del tuo provider API.
 
 ---
 
@@ -136,7 +142,22 @@ per il rilascio del SaaS commerciale. Il tuo contributo è fondamentale.
 
 ---
 
-### Condizioni di rimborso
+### Come candidarsi
+
+Invia una email a **waitlist@purifyfactory.com** con:
+- Oggetto: `[BETA] Candidatura — [Tier 1 / Tier 2] — [Tuo Cognome]`
+- Dimensione approssimativa del tuo dataset
+- Provider AI che intendi utilizzare
+- Sistema operativo (Linux / Windows / macOS)
+- Breve descrizione del tuo caso d'uso (1-3 righe)
+
+Riceverai risposta entro 48 ore con le istruzioni per la firma dell'NDA e il rilascio
+della licenza. Una volta accettato nel programma, utilizzerai **betatesting@purifyfactory.com**
+per tutte le comunicazioni successive.
+
+---
+
+## Condizioni di rimborso
 
 Il rimborso è:
 - **A discrezione esclusiva di Mentora Technologies**, che si riserva il diritto di
@@ -156,21 +177,6 @@ Per ricevere il rimborso, il Betatester deve:
 
 Mentora Technologies non è tenuta a giustificare la mancata erogazione del rimborso
 in caso di feedback ritenuto non valido.
-
----
-
-### Come candidarsi
-
-Invia una email a **waitlist@purifyfactory.com** con:
-- Oggetto: `[BETA] Candidatura — [Tier 1 / Tier 2] — [Tuo Cognome]`
-- Dimensione approssimativa del tuo dataset
-- Provider AI che intendi utilizzare
-- Sistema operativo (Linux / Windows / macOS)
-- Breve descrizione del tuo caso d'uso (1-3 righe)
-
-Riceverai risposta entro 48 ore con le istruzioni per la firma dell'NDA e il rilascio
-della licenza. Una volta accettato nel programma, utilizzerai **betatesting@purifyfactory.com**
-per tutte le comunicazioni successive.
 
 ---
 
@@ -377,12 +383,13 @@ Your contribution is essential: your real-world datasets and observations allow 
 
 ---
 
-## ⚠️ Important: API key required — at your own expense
+## ⚠️ API key required
 
 > **PurifyFactory uses external AI APIs to process text.**
-> **These APIs are not included in the software and are not provided by Mentora Technologies.**
+> These APIs are not included in the software and are not provided by Mentora Technologies.
 >
-> Before using the software you must have an active API key with sufficient credits from one of the supported providers:
+> Before using the software you must have an active API key with sufficient credits
+> from one of the supported providers:
 >
 > | Provider | Where to get it | Indicative cost |
 > |---|---|---|
@@ -391,9 +398,14 @@ Your contribution is essential: your real-world datasets and observations allow 
 > | **Google Gemini** | aistudio.google.com | ~$0.075–$0.30 per million tokens (gemini-flash) |
 > | **Local (Ollama/vLLM)** | — | Your own infrastructure cost |
 >
-> **All processing costs are entirely your responsibility.** For a 1,000-record test dataset, the typical cost with gpt-4o-mini is under $0.10.
+> **API processing costs are your responsibility.** For reference: with gpt-4o-mini,
+> 1,000 records cost under $0.10 and 10,000 records under $1.00.
 >
-> Monitor your usage directly on your API provider's dashboard.
+> The beta program includes a **flat reimbursement** (€5 Tier 1 / €10 Tier 2) that
+> in most cases more than covers the API costs incurred. Reimbursement is at
+> Mentora Technologies' discretion — see [Reimbursement conditions](#reimbursement-conditions).
+>
+> Monitor your usage on your API provider's dashboard.
 
 ---
 
@@ -489,7 +501,22 @@ commercial SaaS release. Your contribution is essential.
 
 ---
 
-### Reimbursement conditions
+### How to apply
+
+Send an email to **waitlist@purifyfactory.com** with:
+- Subject: `[BETA] Application — [Tier 1 / Tier 2] — [Your Last Name]`
+- Approximate size of your dataset
+- AI provider(s) you plan to use
+- Operating system (Linux / Windows / macOS)
+- Brief description of your use case (1–3 lines)
+
+You will receive a reply within 48 hours with instructions for signing the NDA
+and receiving your license. Once accepted into the program, use **betatesting@purifyfactory.com**
+for all subsequent communications.
+
+---
+
+## Reimbursement conditions
 
 Reimbursement is:
 - **At the sole discretion of Mentora Technologies**, which reserves the right not to
@@ -507,21 +534,6 @@ To receive reimbursement, the Beta Tester must:
 
 Mentora Technologies is not obligated to justify non-payment of reimbursement
 in the event of feedback deemed invalid.
-
----
-
-### How to apply
-
-Send an email to **waitlist@purifyfactory.com** with:
-- Subject: `[BETA] Application — [Tier 1 / Tier 2] — [Your Last Name]`
-- Approximate size of your dataset
-- AI provider(s) you plan to use
-- Operating system (Linux / Windows / macOS)
-- Brief description of your use case (1–3 lines)
-
-You will receive a reply within 48 hours with instructions for signing the NDA
-and receiving your license. Once accepted into the program, use **betatesting@purifyfactory.com**
-for all subsequent communications.
 
 ---
 
