@@ -111,7 +111,8 @@ Il programma beta prevede due livelli di partecipazione. Scegli quello adatto al
 
 **Cosa ricevi:**
 - Accesso anticipato al SaaS PurifyFactory (prima del lancio pubblico)
-- Licenza gratuita per 6 mesi dalla data di rilascio commerciale
+- Licenza gratuita per 6 mesi dalla data di rilascio commerciale (senza aggiornamenti
+  automatici, con supporto limitato alla segnalazione e correzione di bug critici)
 - Rimborso forfettario di €5 (vedi condizioni sotto)
 
 **Nota:** Il Tier 1 non contribuisce alla certificazione TRL5, ma è essenziale per il
@@ -160,23 +161,21 @@ per tutte le comunicazioni successive.
 ## Condizioni di rimborso
 
 Il rimborso è:
-- **A discrezione esclusiva di Mentora Technologies**, che si riserva il diritto di
-  non erogarlo in caso di feedback incompleto, non valido o non conforme ai requisiti
-  del tier di appartenenza
+- Rifiutabile **esclusivamente** se il feedback risulta manifestamente incompleto
+  (mancanza di una o più sezioni obbligatorie del FEEDBACK_TEMPLATE.md) o se i log
+  inviati sono corrotti, inutilizzabili o manomessi
 - Erogato **entro 30 giorni** dalla validazione positiva del feedback da parte di
   Mentora Technologies
 - Effettuato **esclusivamente tramite PayPal o bonifico bancario immediato** (SEPA)
 - Non cumulabile con altri sconti, rimborsi o compensi
 - Non trasferibile a terzi
+- Richiedibile entro **60 giorni** dalla scadenza della licenza, pena la decadenza del diritto
 
 Per ricevere il rimborso, il Betatester deve:
 1. Completare il testing secondo i requisiti del proprio tier
 2. Inviare il FEEDBACK_TEMPLATE.md compilato a betatesting@purifyfactory.com
 3. Attendere la validazione da parte di Mentora Technologies
 4. Comunicare i propri dati PayPal o IBAN su richiesta esplicita di Mentora Technologies
-
-Mentora Technologies non è tenuta a giustificare la mancata erogazione del rimborso
-in caso di feedback ritenuto non valido.
 
 ---
 
@@ -470,7 +469,8 @@ The beta program has two levels of participation. Choose the one that matches yo
 
 **What you receive:**
 - Early access to PurifyFactory SaaS (before public launch)
-- Free license for 6 months from commercial release date
+- Free license for 6 months from commercial release date (no automatic updates,
+  support limited to reporting and fixing critical bugs only)
 - €5 flat reimbursement (see conditions below)
 
 **Note:** Tier 1 does not contribute to TRL5 certification, but is essential for
@@ -519,21 +519,21 @@ for all subsequent communications.
 ## Reimbursement conditions
 
 Reimbursement is:
-- **At the sole discretion of Mentora Technologies**, which reserves the right not to
-  issue it in case of incomplete, invalid, or non-compliant feedback
+- Refusable **exclusively** if the feedback is manifestly incomplete (missing one or
+  more mandatory sections of FEEDBACK_TEMPLATE.md) or if submitted logs are corrupted,
+  unusable, or tampered with
 - Issued **within 30 days** of positive feedback validation by Mentora Technologies
 - Made **exclusively via PayPal or immediate bank transfer** (SEPA)
 - Non-cumulative with other discounts, reimbursements, or compensation
 - Non-transferable to third parties
+- Must be requested within **60 days** of License expiration, failing which the right
+  to reimbursement is forfeited
 
 To receive reimbursement, the Beta Tester must:
 1. Complete testing according to their tier requirements
 2. Send the completed FEEDBACK_TEMPLATE.md to betatesting@purifyfactory.com
 3. Await validation by Mentora Technologies
 4. Provide PayPal details or IBAN upon explicit request from Mentora Technologies
-
-Mentora Technologies is not obligated to justify non-payment of reimbursement
-in the event of feedback deemed invalid.
 
 ---
 
