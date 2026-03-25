@@ -2,7 +2,7 @@
 # BETA PROGRAM PARTICIPATION AND NON-DISCLOSURE AGREEMENT
 
 **PurifyFactory v9.1.6 — Mentora Technologies**
-**Versione documento: 2.0 — Marzo 2026**
+**Versione documento: 2.1 — Marzo 2026**
 
 > **Nota per il Titolare / Note for the Titolare:**
 > Compilare i campi `[NOME COGNOME]` con i propri dati prima di inviare il documento al Betatester.
@@ -80,6 +80,8 @@ PurifyFactory v9.1.6 è una pipeline industriale per la pulizia e normalizzazion
 
 **Modalità di elaborazione dei dati**: Il Software opera localmente sulla macchina del Betatester. I testi da elaborare vengono inviati direttamente ai Provider AI remoti tramite le API Key personali del Betatester. **Il Titolare non riceve né accede ai dati in nessuna fase di questo processo automatizzato.** Il Betatester può tuttavia scegliere, autonomamente e dopo l'elaborazione, di condividere volontariamente i propri dataset con il Titolare per finalità di certificazione, secondo quanto previsto all'Art. 13. I dati elaborati sono soggetti alle privacy policy e ai termini di servizio dei rispettivi Provider AI scelti dal Betatester.
 
+**Classificazione AI Act.** Ai sensi del Regolamento (UE) 2024/1689 («AI Act»), PurifyFactory v9.1.6 è classificato come **sistema IA a rischio minimo**: non rientra nelle categorie di sistemi vietati (Art. 5 AI Act), nei sistemi ad alto rischio (Allegato III AI Act) né nelle categorie soggette a obblighi specifici di trasparenza verso gli utenti finali (Art. 50 AI Act). Il Titolare agisce in qualità di «fornitore» del sistema IA ai sensi dell'Art. 3(3) AI Act. I Provider AI (OpenAI, Anthropic, Google) sono fornitori di modelli di IA per uso generale («GPAI») e sono soggetti alle rispettive obbligazioni ai sensi del Capitolo V dell'AI Act, indipendentemente dal presente Accordo.
+
 ---
 
 ### Articolo 4 — Licenza di Beta Testing
@@ -126,6 +128,8 @@ Betatester, ad eccezione di quanto previsto dall'Art. 7 per i Betatester
 che completano il programma beta secondo i requisiti del proprio Tier.
 
 **6.4** Il Betatester è responsabile del rispetto dei termini di servizio e delle policy d'uso dei Provider AI utilizzati. Il Titolare non è responsabile di eventuali sospensioni o limitazioni degli account API del Betatester.
+
+**6.5 Rischio utilizzo dati per addestramento dei modelli AI.** Il Betatester è avvertito che alcuni Provider AI possono, secondo i propri termini di servizio, utilizzare i dati trasmessi tramite API per addestrare i propri modelli, salvo opt-out esplicito o sottoscrizione di piani con garanzie contrattuali specifiche. Il Titolare non ha alcun controllo sulle policy di utilizzo dei dati dei Provider AI e non è responsabile di tale utilizzo. È responsabilità esclusiva del Betatester: (a) verificare le condizioni di utilizzo aggiornate di ciascun Provider AI prima di trasmettere qualsiasi dato; (b) attivare eventuali opzioni di opt-out disponibili; (c) non trasmettere ai Provider AI dati riservati, segreti commerciali o dati personali di terzi per i quali non disponga delle autorizzazioni necessarie al trattamento.
 
 ---
 
@@ -259,6 +263,7 @@ c) mantenere riservata la vulnerabilità per tutta la durata della Licenza e per
 ---
 
 ### Articolo 11 — Trattamento dei Dati Personali
+*(Informativa ai sensi dell'Art. 13 del Regolamento (UE) 2016/679 — GDPR)*
 
 **11.1 Titolare del Trattamento.** Ai sensi del Regolamento (UE) 2016/679 («GDPR»), il Titolare del trattamento è **[NOME COGNOME]**, persona fisica residente in Grottaferrata (RM), Italia, raggiungibile all'indirizzo betatesting@purifyfactory.com.
 
@@ -302,6 +307,8 @@ In ogni caso, su richiesta esplicita del Betatester, i dati personali saranno el
 **11.7 Trasferimento a terzi.** I dati non vengono ceduti, venduti o comunicati a soggetti terzi, salvo che per obbligo di legge o ordine dell'autorità giudiziaria.
 
 **11.8 Dataset contenenti dati di terzi.** Qualora il Betatester trasmetta accidentalmente dataset contenenti dati personali di terzi, è tenuto a darne **comunicazione immediata** al Titolare all'indirizzo betatesting@purifyfactory.com. Il Titolare procederà all'eliminazione immediata dei dati dal proprio sistema, senza trattenerne copia, e ne darà conferma scritta al Betatester entro 7 (sette) giorni dalla comunicazione.
+
+**11.9 Trasferimenti di dati verso Paesi terzi.** Il Titolare non trasferisce direttamente dati personali del Betatester verso Paesi terzi al di fuori dello Spazio Economico Europeo (SEE). Tuttavia, il Betatester è informato che, nell'ambito del normale funzionamento del Software, i testi dei Dataset di Input vengono inviati dal Betatester direttamente ai Provider AI (OpenAI LLC, Anthropic PBC, Google LLC), soggetti di diritto statunitense stabiliti negli USA. Tale trasferimento avviene nell'ambito del rapporto contrattuale diretto tra il Betatester e il relativo Provider AI, e si basa sulle Clausole Contrattuali Standard (SCC) o sui meccanismi di trasferimento adottati da ciascun Provider AI ai sensi dell'Art. 46 GDPR. Il Betatester è invitato a consultare le informative privacy dei singoli Provider AI per i dettagli sui trasferimenti internazionali di dati.
 
 ---
 
@@ -379,6 +386,8 @@ e) l'assenza di perdita di dati, danni al sistema o interruzioni operative deriv
 **15.2** Il Betatester si assume il **pieno e totale rischio** derivante dall'installazione, dalla configurazione, dall'utilizzo e dai risultati del Software. L'utilizzo del Software avviene interamente sotto la responsabilità esclusiva del Betatester.
 
 **15.3** Il Betatester manleva e tiene indenne il Titolare da qualsiasi pretesa, azione legale, richiesta di risarcimento o spesa (incluse le spese legali) avanzate da terzi in connessione con l'utilizzo del Software da parte del Betatester.
+
+**15.4 Obblighi AI Act a valle.** Il Titolare non è responsabile degli obblighi derivanti dal Regolamento (UE) 2024/1689 («AI Act») che possano gravare sul Betatester in qualità di «deployer» qualora questi utilizzi l'output del Software come componente di un sistema IA classificato ad alto rischio ai sensi dell'Allegato III del medesimo Regolamento. È responsabilità esclusiva del Betatester verificare la conformità all'AI Act dei propri sistemi a valle che utilizzino output prodotti dal Software.
 
 ---
 
@@ -535,6 +544,8 @@ PurifyFactory v9.1.6 is an industrial-grade pipeline for text cleaning and norma
 
 **Data processing model**: The Software runs locally on the Beta Tester's machine. Text data to be processed is sent directly to remote AI Providers via the Beta Tester's personal API Keys. **The Owner does not receive or access data at any stage of this automated process.** The Beta Tester may however choose, independently and after processing is complete, to voluntarily share their datasets with the Owner for certification purposes, as provided in Art. 13. Processed data is subject to the privacy policies and terms of service of the respective AI Providers chosen by the Beta Tester.
 
+**AI Act Classification.** Pursuant to Regulation (EU) 2024/1689 («EU AI Act»), PurifyFactory v9.1.6 is classified as a **minimal-risk AI system**: it does not fall within the categories of prohibited systems (Art. 5 AI Act), high-risk AI systems (Annex III AI Act), or systems subject to specific transparency obligations toward end users (Art. 50 AI Act). The Owner acts as the «provider» of the AI system pursuant to Art. 3(3) AI Act. The AI Providers (OpenAI, Anthropic, Google) are providers of general-purpose AI models («GPAI») and are subject to their respective obligations under Chapter V of the AI Act, independently of this Agreement.
+
 ---
 
 ### Article 4 — Beta Testing License
@@ -581,6 +592,8 @@ Beta Tester, except as provided in Art. 7 for Beta Testers who complete
 the beta program according to their Tier requirements.
 
 **6.4** The Beta Tester is responsible for compliance with the terms of service and acceptable use policies of any AI Provider used. The Owner bears no responsibility for any suspension or restriction of the Beta Tester's API accounts.
+
+**6.5 Risk of AI model training on submitted data.** The Beta Tester is advised that certain AI Providers may, pursuant to their own terms of service, use data submitted via API to train their models, unless an explicit opt-out is activated or an enterprise plan with specific contractual guarantees is in place. The Owner has no control over the data usage policies of AI Providers and bears no liability for such use. It is the Beta Tester's sole responsibility to: (a) review the current terms of service of each AI Provider before transmitting any data; (b) activate any available opt-out options; (c) refrain from transmitting to AI Providers any confidential data, trade secrets, or personal data of third parties for which the Beta Tester does not hold the necessary processing authorizations.
 
 ---
 
@@ -709,6 +722,7 @@ c) keep the vulnerability confidential for the entire duration of the License an
 ---
 
 ### Article 11 — Personal Data Processing
+*(Privacy Notice pursuant to Art. 13 of Regulation (EU) 2016/679 — GDPR)*
 
 **11.1 Data Controller.** Pursuant to Regulation (EU) 2016/679 («GDPR»), the Data Controller is **[FIRST NAME LAST NAME]**, a natural person residing in Grottaferrata (RM), Italy, reachable at betatesting@purifyfactory.com.
 
@@ -752,6 +766,8 @@ In all cases, upon explicit request from the Beta Tester, personal data will be 
 **11.7 Third-party transfers.** Data is not sold, assigned, or communicated to third parties, except as required by law or judicial order.
 
 **11.8 Datasets containing third-party data.** Should the Beta Tester accidentally transmit datasets containing personal data of third parties, they are required to **immediately notify** the Owner at betatesting@purifyfactory.com. The Owner will immediately delete the data from their systems without retaining any copy, and will confirm deletion in writing to the Beta Tester within 7 (seven) days of notification.
+
+**11.9 Transfers of data to third countries.** The Owner does not directly transfer the Beta Tester's personal data to third countries outside the European Economic Area (EEA). However, the Beta Tester is informed that, in the ordinary operation of the Software, the texts of Input Datasets are transmitted by the Beta Tester directly to AI Providers (OpenAI LLC, Anthropic PBC, Google LLC), entities incorporated under US law and established in the United States. Such transfer occurs within the direct contractual relationship between the Beta Tester and the relevant AI Provider, and relies on Standard Contractual Clauses (SCCs) or other transfer mechanisms adopted by each AI Provider pursuant to Art. 46 GDPR. The Beta Tester is encouraged to consult the privacy notices of the individual AI Providers for details on international data transfers.
 
 ---
 
@@ -829,6 +845,8 @@ e) the absence of data loss, system damage, or operational disruption resulting 
 **15.2** The Beta Tester assumes the **full and entire risk** arising from the installation, configuration, use, and results of the Software. Use of the Software occurs entirely under the Beta Tester's sole responsibility.
 
 **15.3** The Beta Tester shall indemnify and hold harmless the Owner from any claim, lawsuit, demand for damages, or expense (including reasonable legal fees) brought by third parties in connection with the Beta Tester's use of the Software.
+
+**15.4 Downstream AI Act obligations.** The Owner bears no responsibility for any obligations arising under Regulation (EU) 2024/1689 («EU AI Act») that may fall upon the Beta Tester as a «deployer» in the event that the Beta Tester uses the Software's output as a component of an AI system classified as high-risk under Annex III of the same Regulation. It is the Beta Tester's sole responsibility to verify compliance with the AI Act for any downstream systems that incorporate output produced by the Software.
 
 ---
 
